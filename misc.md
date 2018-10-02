@@ -49,7 +49,7 @@ data persist after browser is closed
 
     homescreen icons
 
-# Media Queryies
+# Media Queries
 
 `@media` rule include block of CSS only if condition === true
 
@@ -68,4 +68,4 @@ can change layout of page depending on orientation of browser
     portrait vs. landscape
 
 can also hide elements with media queries
-    font size too
+    font size tooS

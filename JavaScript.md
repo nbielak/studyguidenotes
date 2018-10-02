@@ -1,6 +1,6 @@
 # Prototypes
 
-set prototype user `__proto__`
+set prototype use `__proto__`
 
 ## Prototype Property
 
@@ -20,7 +20,7 @@ if `F` has a `prototype` property == Object type
 every function has `prototype` property
     even if not supplied
 
-default `"prototype"` is object with only property construtor that pointst back to function itself
+default `"prototype"` is object with only property construtor that points back to function itself
 
 can use `constructor` propertry to create new object usering same constructor as the existing one
 
