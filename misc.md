@@ -69,3 +69,21 @@ can change layout of page depending on orientation of browser
 
 can also hide elements with media queries
     font size tooS
+
+# CSS Grid
+
+fundamental to design of websites
+
+two core ingredients:
+    wrapper(parent)
+    items(children)
+
+give display of 'grid'
+
+## Columns and Rows
+
+make it two dimensional
+
+use `grid-template-columns` and `grid-template-rows`
+
+position and resize: `grid-column` and `grid-row`

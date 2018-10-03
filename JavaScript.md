@@ -37,3 +37,15 @@ let rabbit2 = new rabbit.constructor("Black Rabbit");
 ```
 can add/remove props to default "prototype" instead of overwriting as a whole
 
+# Closures
+
+combination of function and lexical environment from which it was declared
+
+allows function to access variables from an enclosing scope
+    even after it leaves scope it was declared in
+
+can refter to outer scope variables even after function has returned
+
+allows for data encapsulation
+    some data not directly exposed
+
