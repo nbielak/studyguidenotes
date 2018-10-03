@@ -69,7 +69,7 @@ acyclic graph: a graph with no cycle
     e.g. a tree
 
 ## Storing a Graph
-
+Edge list rep
 two lists
     vertex list O(|V|)
     edge list O(|E|)
@@ -78,5 +78,16 @@ vertex identified by value
 
 edge identified by start vertex and end vertex, weight if it's relevent 
 
+## Adjacency Matrix
 
+store edges in matrix
+good for dense graphs
+efficient in terms of time, but no space
+
+store whether edge attaches
+
+## Adjacency List
+
+only store if connected
+linked list
 
