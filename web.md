@@ -162,3 +162,129 @@ ability for a server to send executable code to client
 HTML script tag
     HTML doc loaded -> browser automatically fetches JavaScript from server and executes locally
 
+
+# Opening Google
+
+## DNS Record Check
+
+The browser checks the cache for a DNS record to find the corresponding IP address of maps.google.com.
+
+DNS is a database that maintains name of website(URL) and linked IP address
+    every URL has unique IP address
+
+    IP address belongs to computer which hosts the server of the website
+
+DNS: friendly to humans
+    don't have to remember long numbers
+
+checks 4 caches:
+    1. browser cache
+        repository of DNS records of previously visited websites for a fixed duration
+
+    2. OS cache
+        makes system call to underlying computer OS
+
+        OS maintains cache of DNS records
+
+    3. router cache
+        with its own router that maintains cache
+
+    4. ISP cache
+        maintains its own DNS server
+
+## DNS query
+
+If the requested URL is not in the cache, ISP’s DNS server initiates a DNS query to find the IP address of the server that hosts website
+
+purpose is to search multiple DNS servers on internet until if finds correct IP address
+
+recursive search
+    continues from DNS server to next 
+
+    until IP found or error response
+
+the ISP’s DNS server a DNS recursor whose responsibility is to find the proper IP address of the intended domain name by asking other DNS servers on the internet for an answer.
+
+other DNS servers are called name servers
+    perform DNS search based on domain architecture of website
+
+domain levels:
+    root domain: "."
+
+    top-level domains: "edu", "gov", "org", "com", "au"
+
+    Second-level domains: "'openoffice'.org", "'expedia'.gov", "'microsoft'.com
+
+    Third-level domains: "'www'.expedia.gov",
+    "'download'.microsoft.com"
+
+requests send you through until found
+
+data sent in small packets
+    contain content of req
+    IP address destined for
+
+## TCP Connection
+
+Browser initiates a TCP connection with the server
+
+once browser receives correct IP address
+    build connection with IP address server
+
+    transfer information
+
+user internet protocols to build connections
+    TCP most common for HTTP requests
+
+established using a process called TCP/IP three-way handshake
+    client and server exchange SYN(synchronize) and ACK(acknowledge) messages to establish connection
+
+    1. client sends SYN packet to server asking if open for new connections
+
+    2. if server has open ports and can accept, sends ACK of the SYN package using an SYN/ACK packet
+
+    3. client receives SYN/ACK packet and sends ACK packet
+
+## HTTP Request
+
+browser then sends HTTP req to the web server
+
+contain 'GET' or 'POST', etc
+    also browser identification
+
+    types of reqs it will accept
+
+    connection headers to keep TCP connection alive for additional reqs
+
+## Server Response
+
+sends HTTP response
+
+contains webpage you requested from and status code(Content-Encodeing)
+    how to cache the page(Cache-Control)
+
+    cookies
+
+    privacy info, etc
+
+status codes:
+    1xx: informational message
+    2xx: success of some kind
+    3xx: redirects the client to another url
+    4xx: error on client's part
+    5xx: error on server's part
+
+## HTML Content
+
+browser displays html content
+
+renders barebone HTML skeleton
+
+checks HTML tags and sends GET reqs for additional elements on page
+    images
+    
+    CSS stylesheets
+
+    JS fils
+
+    these static files cached in browser

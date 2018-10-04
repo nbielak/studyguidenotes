@@ -91,3 +91,38 @@ store whether edge attaches
 only store if connected
 linked list
 
+## BFS and DFS for Graphs
+
+### DFS
+
+depth first
+
+requires stack
+
+takes first vertex and pushes onto stack
+    visits it
+
+    mark it as visited
+
+take first adjacent vertex, push onto stack, and visits
+
+    mark as visited
+
+    etc
+
+Graphs may have cycles unlike trees
+    use boolean visited array
+
+Time Complexity: O(V+E)
+### BFS
+
+breadth first
+
+Queue instead of stack
+
+visit first and mark as visited
+    push adjacent nodes onto queue
+    once visited finishes dequeue first on queue
+
+    explore new first el of queue
+

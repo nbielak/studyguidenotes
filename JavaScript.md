@@ -49,3 +49,37 @@ can refter to outer scope variables even after function has returned
 allows for data encapsulation
     some data not directly exposed
 
+# Event Loop
+
+## Call Stack
+
+js single threaded
+    run one piece code at a time
+
+call stack: data structure that records where we are in a function
+    call: push onto stack
+    return: pop off of stack
+
+blocking
+    code that is slow on the stack are blocking
+
+can't do anything while blocked because single threaded
+    solution: asynchronous callbacks
+
+## Concurrency and the Event Loop
+
+concurrency can happen because webapis
+    
+    pushes call back onto taskqueue
+
+if stack is empty, event loop pushes callback from task queue to call stack
+
+## Callbacks
+
+can be a function that another function calls
+
+or 
+
+one that will be pushed on callback queue
+
+dont want to fill callback queue with slow code or else won't be able to rerender quickly
