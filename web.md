@@ -288,3 +288,71 @@ checks HTML tags and sends GET reqs for additional elements on page
     JS fils
 
     these static files cached in browser
+
+# DNS
+
+backbone of the internet
+
+user asks browser to visit website
+
+browser queries DNS Resolver for location
+    usually their ISP
+
+DNS Resolver queries Root servers for ".com" and gives res
+
+DNS Resolver queries res for location and gets IP address
+
+Servers are queried with IP address and gives res
+
+Website files delivered and rendered on the page
+
+## Who Makes It Work?
+
+IANA- Internet Assigned Numbers and Authority
+    maps domain names and IP addresses
+
+    have mandate to make safe and stable DNS
+
+ICANN- Internet Corporation for Assigned Names and Numbers
+    technical operations of vital DNS resources
+
+    defines policies for how the names and numbers of internet run
+
+    "bottom up, consensus-driven, multi-stakholder model"
+
+in 2015 ICANN transitioned from being under contract from US Department of Commerce to autonomous control of ICANN
+    has board of directors 
+
+    divided into separate member groups
+
+ICANN treates public sector, private sector, and technical experts as peers
+
+"In the ICANN community, you’ll find registries, registrars, Internet Service Providers (ISPs), intellectual property advocates, commercial and business interests,
+ non-commercial and non-profit interests, representation from more than 100 governments, and a global array of individual Internet users"
+
+    All points of view receive consideration on their own merit
+        not equally
+
+        more financial stake, more say
+
+        AT&T, Verizon, Comcast, etc.
+
+        could package websites like cable 
+    Some gov'ts try to influence toward state interests
+
+    IP advocates want more focus on IP and brand security
+        usually lawyers protecting rights of high paying clients
+
+    Commercial Service Providers (Google, FB) advocate users' privacy and web domination
+
+    registries have interest in designing policy favorable to these groups
+
+    Rregistrars will push back on ICANN sometimes
+
+## End Users
+
+lack of end-user engagement
+    3.7 billion internet users, but few people own stakes
+
+At-Large is end user contingent of ICANN
+    divided by continent
