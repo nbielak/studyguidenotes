@@ -126,3 +126,4 @@ visit first and mark as visited
 
     explore new first el of queue
 
+Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges
