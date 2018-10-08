@@ -295,16 +295,7 @@ backbone of the internet
 
 user asks browser to visit website
 
-browser queries DNS Resolver for location
-    usually their ISP
-
-DNS Resolver queries Root servers for ".com" and gives res
-
-DNS Resolver queries res for location and gets IP address
-
-Servers are queried with IP address and gives res
-
-Website files delivered and rendered on the page
+What lifecycle methods get called in the mounting phase? What are the use cases for each of those methods?
 
 ## Who Makes It Work?
 
@@ -356,3 +347,48 @@ lack of end-user engagement
 
 At-Large is end user contingent of ICANN
     divided by continent
+
+# Packet, Routers, and Reliability
+
+not direct dedicated connects
+
+packet of information
+    moves like one world a car
+
+large packets broken down into smaller packets
+
+router chooses how packet moves
+    best route isn't always the best
+
+    options make it fault tolerant
+        if something breaks down can still work
+    
+TCP manages sending and receiving data as packets
+
+scalable
+    more routers, more reliable
+
+## TCP Layers
+
+### Application Layer
+
+top layer
+programs directly interact with
+    http
+
+### Transport Layer
+
+TCP and UDP live here
+
+after data gotten,
+    talks to transport layer through port
+
+breaks up data into packets
+
+has header to double check everything goes through right
+
+### Internet Layer
+
+attach origin and destination IP address to packet
+
+data then sent

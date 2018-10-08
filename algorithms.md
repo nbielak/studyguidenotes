@@ -127,3 +127,37 @@ visit first and mark as visited
     explore new first el of queue
 
 Time Complexity: O(V+E) where V is number of vertices in the graph and E is number of edges
+
+## Topological Sort
+
+ordering of vertex
+    edge going from u to v
+    u comes before v
+
+visited set has all vertexes
+
+stack has vertices that are fully explored
+
+Directed Acyclic Graphs (DAG)
+
+the first vertex in topologicval sorting is always a vertex with in-degree as 0
+
+Topological Sort vs DFS
+
+In DFS, we print a vertex and then recursively call DFS for its adjacent vertices. In topological sorting, we need to print a vertex before its adjacent vertices. 
+
+mod DFS to fit needs
+
+# Dijkstar's Algorithm
+
+find shortest path in graph
+
+works on directed and undirected
+    as long non negative number
+
+we need a heap + map
+    hash map + binary heap
+
+distance map holds distance
+
+path map holds path to every vertex

@@ -83,3 +83,19 @@ or
 one that will be pushed on callback queue
 
 dont want to fill callback queue with slow code or else won't be able to rerender quickly
+
+#IIFE
+
+immediately called after you define it
+
+when you want to creat a new variable scope
+
+surrounding parenthesis prevent from treating as a function declaration
+
+final parens execute the function
+
+calling function exactly when you are defining it
+
+attach private data to a function
+creates fresh environments
+avoids polluting the global namespace
