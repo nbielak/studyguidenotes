@@ -90,6 +90,149 @@ position and resize: `grid-column` and `grid-row`
 
 # React 
 
+## Fundamentals
+
+### React is all about components
+
+define small reusable components to put them together to build bigger ones
+
+component name starts with capital letter
+    required because of mix of HTML and React elements
+
+    lowercase for HTML
+
+every component has attributes
+    list is called props
+
+### JSX
+
+document.createElement
+    main function in the React top-level API
+
+    like document.createElement
+
+    higher-level function that can create React components
+
+    accepts dynamic number of arguments after the second one to represent the children of the created element
+
+        createElement actually creates a tree
+
+React's API as similar to DOM API as possible
+
+jsx provides ability to write syntax very similar to HTML
+    not html
+        doing className instead of class
+
+### JS expressions in JSX
+
+use {} for any JS expression
+
+only expressions
+    e.g. no if statement, but ternary expression is ok
+
+JS variables are also expressions
+    component receives props, props can be in curly braces
+
+JS objects are also expressions
+    one use case is to pass a CSS style object
+
+use destructuring
+
+React element is also an expression
+
+### Can write React components with JS classes
+
+`class xxxx extends React.Component`
+
+### Events in React
+
+all React element attributes are named using camelCase
+
+pass JS function reference as the event handler rather than a string
+
+### Every REact component has a story
+
+class components only
+
+1. define a template for React to create elements from the component
+
+2. instruct React to use it 
+    render call of another component
+
+3. React instantiates an element and gives it a set of props
+    this.props
+
+4. JS constructor method called, if defined
+    first of the component lifecycle methods
+
+5. Computes the output of the render method
+
+6. On first render, React communicates with browser using DOM API to display the element there
+    known as mounting
+
+7. invokes another lifecycle method
+    componentDidMount
+    do things on the DOMthat we now know exists in the browser
+
+8. Sometimes ends here
+    other components get unMounted from the browser DOM
+        componentWillUnmount
+
+9. The state of any mounted element might change
+    the parent of that element might rerender
+
+    mounted element might recei e a difference set of props
+
+### React Components can have private State
+
+only applicable to class components
+    presentational components = "dumb"
+
+React monitors every component state for changes
+    have to change state field through `this.setState`
+
+setState is asynchronous
+
+merges what you pass it with existing state
+
+### React will react
+
+reacts to state changes
+    not reactively but on a schedule
+
+render function's input:
+    props that e passed by the parent
+
+    internal private state that can be updated anytime
+
+### React is your agent
+
+to communicate with browser
+
+### Every React Component has a story pt 2
+
+1. component might re-render when state updates
+    or when parent decides to change the props it passed to the component
+
+2. if latter, React invokes componentWillReceiveProps
+
+3. for any change, React asks shouldCompnentUpdate
+    can customize or optimize render process
+
+    return true or false
+
+4. default is fine though
+
+5. invokes componentWillUpdate
+    computes new rendered output and compares with last output
+
+6. if rendered output is the same, React does nothing
+
+7. React takes difference to browser, if there is one
+
+8. invokes componentDidUpdate
+
+
 ## Lifecycle Methods
 
 control what happens when each tiny section of UI renders, updates, rerenders, or disappears
