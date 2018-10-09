@@ -99,3 +99,34 @@ calling function exactly when you are defining it
 attach private data to a function
 creates fresh environments
 avoids polluting the global namespace
+
+# Type Checking
+
+== checks for equality with coercion
+
+=== checks for equality without coersion
+    strict equality
+
+when comparing a boolean to something other than a boolean
+    JS coerces boolean to a number and compares
+
+number and string - string -> number
+
+# this
+
+methods: functions stored in object properties
+
+methods allow objects to act
+    reference the object as `this`
+
+`this` defined at run time
+
+when a function declared, it may use `this`
+    `this` has no value until function is called
+
+function can be copied between objects 
+
+when a function is called in the method syntax
+    `this` value === object
+
+arrow functions have no this

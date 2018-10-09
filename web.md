@@ -392,3 +392,79 @@ has header to double check everything goes through right
 attach origin and destination IP address to packet
 
 data then sent
+
+# UDP and TCP
+
+structure of packet: 
+
+    Application, transportation, network, Link, Physical
+
+UDP and TCP part of transport layer
+    multiple apps uses one network connection simultaneously
+
+    creates 1000s of ports per connection
+
+message wrapped in segment in transportation layer
+    has source and destination ports
+
+segment passed to network layer
+
+## UDP
+
+small packet sizes
+
+    udp headers 8 bytes, tcp 20 bytes
+
+connectionless
+
+more control over when data sent
+
+primitive error deduction
+    no error recovery
+    corrupted segment discarded
+
+UDP does not compensate for lost packets
+
+packets may arrive out of order
+
+no congestion control
+
+lightweight but unreliable
+
+## TCP
+
+more reliable, bigger overhead
+
+connection based
+    negotiate connection first
+    three way handshake
+        SYN
+        ACK
+        SYN/ACK
+
+retransmission
+    when delivery ack not received assumes packet got lost and send again
+
+implement in order delivery due to number system
+
+congestion control
+    delay transmission when network congested
+
+Error detection
+    checksum mandatory
+    
+Need bigger headers
+
+Data doesn't always get sent out immediately
+    side of congestion control
+
+bigger overhead
+    retransmission and package acknowledgement
+
+UDP is message orient4ed
+    sends data in distinct chunks
+
+TCP stream oriented
+    continuous flow of data
+    split up in chuncks by TCP
+

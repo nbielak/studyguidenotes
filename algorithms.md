@@ -161,3 +161,36 @@ we need a heap + map
 distance map holds distance
 
 path map holds path to every vertex
+
+generate shortest path tree given root
+
+two sets: 
+    one contains vertices included in parth tree
+
+    other includes vertices not yet included in shortest path tree
+
+    at every step we find a vertex wich is in the other set and has a minimum distance from the source
+
+## Steps
+
+1. create a set sptSet (shortest path tree set)
+    keeps track of vertices included in shortest path tree
+        i.e. whose minimum distance from the source is caluculated and finalized
+
+        starts out empty
+2. Assign a distance value to all vertices in the input graph
+    initialize all distance values as INFINITE
+
+    Assign distance value as 0 for the source vertex
+        so that it will be picked first
+
+3. While sptSet doesn't include all vertices
+    a. picka vertex u which is not there in sptSet and has minimum distance value
+
+    b. include u to sptSet
+
+    c. Update distance value of all adjaces vertices of u
+        iterate through all adjacent vertices
+
+        for every adjacent vertex v if sum of distance value of u and weight of edge u-v < distance value of v
+            updatethe distance value of v
