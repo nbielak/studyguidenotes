@@ -468,3 +468,49 @@ TCP stream oriented
     continuous flow of data
     split up in chuncks by TCP
 
+# HTTP Methods
+
+## GET
+
+retrieves data from web server
+    specifies params in URL
+
+main method for doc retrieval
+
+## HEAD
+
+functionally similar to GET
+    except res == line and headers, but no entity body
+
+## POST
+
+sending new data to server
+    file update, form data
+
+## PUT
+
+req to store the included entity-body at a location specified by the given URL
+
+## DELETE
+
+delete file 
+    location specified by URL
+
+## CONNECT
+
+by client to establish network connection to web server over HTTP
+
+## OPTIONS
+
+find out HTTP methods and other options supported by a web server
+
+client can specify a URL for the OPTIONS method
+    or an asterisk for entire server
+
+## TRACE
+
+echo the contents of an HTTP req back to the requester
+    used for debugging purposes at the time of development
+
+
+

@@ -130,3 +130,13 @@ when a function is called in the method syntax
     `this` value === object
 
 arrow functions have no this
+
+# Hoisting
+
+moving var and function declarations to the top of their respective scopes during compilation phase
+
+function declarations = completely hoisted
+    can be called before it is defined
+
+vars partially hoisted
+    var declarations are hoisted but not assignments

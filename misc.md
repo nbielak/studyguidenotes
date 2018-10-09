@@ -323,3 +323,13 @@ last minute requests
 
 cancel outgoing network reqs, remove event listeners
 
+
+# Redux
+
+## The Single Immutable State Tree
+
+whole state as a single javascript object
+
+all changes explicit
+
+more complex app == more state to keep track of
