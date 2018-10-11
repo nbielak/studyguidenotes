@@ -512,9 +512,9 @@ client can specify a URL for the OPTIONS method
 echo the contents of an HTTP req back to the requester
     used for debugging purposes at the time of development
 
-# HTTP Status Codes
+## HTTP Status Codes
 
-## 200 OK
+### 200 OK
 
 req has succeeded
 
@@ -528,7 +528,7 @@ POST: entity describing or containing the result of the action
 
 TRACE: an entity containing the req message as receive by the end server
 
-## 201 Created
+### 201 Created
 
 req has been fulfilled and resulted in a new resource being created
 
@@ -545,7 +545,7 @@ origin server must create the resource before returning 201
 if not carried out immediately,
     server should respond w 202(accepted)
 
-## 204 No Content
+### 204 No Content
 
 server fulfilled req but does not need to return an entity boidy
     might want to return updated metaingormation
@@ -564,7 +564,7 @@ if client is user agent
 must not include a message-body
     thus terminated by the first empty line after the header fields
 
-## 304 Not Modified
+### 304 Not Modified
 
 if client performed conditional get req and access allowed
     if doc not been modified
@@ -582,14 +582,14 @@ if 304 indicates an entity not currently cached
 if cache uses a recevied 304 res to update a cache entry
     cache must update the entry w new values
 
-## 400 Bad Request
+### 400 Bad Request
 
 req cannot be fulfilled due to bad syntax
 
 general error when fulfilling req would cause an invalid state
     domain validation errors, missing data, etc
 
-## 401 Unauthorized
+### 401 Unauthorized
 
 req requires user authentication
 
@@ -600,7 +600,7 @@ res must include a WWW-Authenticate header field containing a challenge applicab
 
 for missing or invalid auth token
 
-## 403 Forbidden
+### 403 Forbidden
 
 for user not authorized to perform the operation
     or the resource is unavailable
@@ -609,7 +609,7 @@ legal req, but server is refusing to respond
 
 authentication will make no difference
 
-## 404 Not Found
+### 404 Not Found
 
 used whe nthe requested resource is not found
     doesn't exist
@@ -619,17 +619,115 @@ may be available in the future
 
 subsequent reqs by the client are permissible
 
-## 409 Conflict
+### 409 Conflict
 
 whenever a resource conflict would be caused by fulfilling the req
 
 duplicate entries and deleting root objects when cascade-delete is not supported are a couple of examples
 
-## 500 Internal Server Error
+### 500 Internal Server Error
 
 generic error message given when no more qpecific message is suitable
 
 general catch all when the server-side throws an exception
+
+## HTTPS
+
+HTTP vulnerable to changes by 3rd parties
+
+secret messages sent by symmetric key cryptography
+
+### Deciding the Key
+
+SKC is secure if no one apart from sender and receiveer know the key
+
+Man in the Middle Attack    
+    3rd party gets key and changes message
+
+    only protection is to change encryption system altogether
+
+### Assymetrid Key cryptography
+
+EXAMPLE:
+    Bob sends a pigeon to Alice w/o message
+
+    Alices sends pigeon back carrying a box with an open lock, no key
+
+    Bob puts the message in the box, closes and locks the box, and sends the box to Alice
+
+    Alice receives box and opens it with the key and reads the message
+
+No third party can't change message bc doesn't have key
+
+same process followed vice versa
+
+even if you can encrypt message, can't decrypt
+
+box is public key and the key is the private key
+
+#### Certification Authority
+
+3rd party to check to make sure everyone is truthfully the people they claim to be 
+
+Use asymmetric cryptography to choose the encryption key for symmetric cryptography
+
+reliablility of asymmetric cryptography and efficiency of symmetric cryptography
+
+## GET vs POST
+
+### Back button/Reload
+
+GET: harmless
+
+POST: data will be re-submitted
+
+### Bookmarked
+
+GET: can be bookmarked
+
+POST: cannot be bookmarked
+
+### Cached
+
+GET: can be cached
+
+POST: not cached
+
+### Encoding type
+
+GET: applicatoin/x-www-form-urlencoded
+
+POST: applicatoin/x-www-form-urlencoded or multipart/form-data; use multipart encoding for binary data
+
+### History
+
+GET: parameters remain in browser history
+
+POST: parameters are not saved in browser history
+
+### Restriction on data length
+
+GET: Yes, when sending dat, the GET method adds the data to the URL and the lenghtof a URL is limited
+
+POST: no
+
+### Security
+
+GET: less secure bc data sent as part of URL; never use get for passwords etc
+
+POST: safer bc params are not stored in browser history or in web server logs
+
+### Visibility
+
+GET: Data is visible to everyone in the URL
+
+POST: not displayed in the URL
+
+
+## PUT vs PATCH
+
+PUT replaces entire entity, while PATCH only updates the fields that were supplied
+
 
 
 

@@ -194,3 +194,38 @@ two sets:
 
         for every adjacent vertex v if sum of distance value of u and weight of edge u-v < distance value of v
             updatethe distance value of v
+
+# Dynamic Programming
+
+memoizing so that you don't have to re do work that we have already done
+    top down
+
+tabulation: bottom up
+
+algorithic paradigm
+    breaking down problems and solving sub problems
+
+## Memoization
+
+look up table for previous solutions
+
+checks whether table is nil or not
+
+!nil, returns val of table[i]
+
+nil and i satisifies base condition, update the look up table with the basze value and return the same
+
+nil and !i satisfies base case, i splits the problem i into subproblems and recursively calls itself to solve them
+
+after recursive calls return, i combines the soultions to the subproblems, updates the lookuptable, and returns the solution for problem i
+
+## Tabulation
+
+initialize the base values of "i"
+
+run a loop that iterates over the remainting values of i
+
+at every iteration i, fn updates the ith entry in the lookuptable by combining the solutions to the previously solved subproblems
+
+rn returns table[n]
+
