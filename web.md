@@ -512,5 +512,60 @@ client can specify a URL for the OPTIONS method
 echo the contents of an HTTP req back to the requester
     used for debugging purposes at the time of development
 
+# HTTP Status Codes
+
+## 200 OK
+
+req has succeeded
+
+res depends = 
+
+GET: entity corresponding to requested resource in the response
+
+HEAD: entity-header fields corresponding to the requested resource in response w/o message body
+
+POST: entity describing or containing the result of the action
+
+TRACE: an entity containing the req message as receive by the end server
+
+## 201 Created
+
+req has been fulfilled and resulted in a new resource being created
+
+new resource can be referenced by URIs returned in the entity of response
+    most specfic URI in Location header field
+
+res should include an entity containing list of resource characteristics
+    also locations from which the user can choose the one most appropriate
+
+format specified by media type give in the content-type header field
+
+origin server must create the resource before returning 201
+
+if not carried out immediately,
+    server should respond w 202(accepted)
+
+## 204 No Content
+
+server fulfilled req but does not need to return an entity boidy
+    might want to return updated metaingormation
+
+may include new or updated metainformation in the form of entity-headers
+    associated with the req variant
+
+if client is user agent
+    should not change document view from that which caused the req to be sent
+
+    response primarily intended to allow inputs  for actions to take place
+        w/o causing change to the user agent's document view
+
+        new or updated metainformation should be applied to the document currently in the user agent's active view
+
+must not include a message-body
+    thus terminated by the first empty line after the header fields
+
+## 304 Not Modified
+
+
 
 
