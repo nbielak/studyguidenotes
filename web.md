@@ -566,6 +566,70 @@ must not include a message-body
 
 ## 304 Not Modified
 
+if client performed conditional get req and access allowed
+    if doc not been modified
+        responds with 304
+    
+must not contain a message body
+    terminated by first empty line after the header fields
+
+must include
+    date unless its omission is required
+
+if 304 indicates an entity not currently cached
+    cache must disregard the response and repeat the req
+
+if cache uses a recevied 304 res to update a cache entry
+    cache must update the entry w new values
+
+## 400 Bad Request
+
+req cannot be fulfilled due to bad syntax
+
+general error when fulfilling req would cause an invalid state
+    domain validation errors, missing data, etc
+
+## 401 Unauthorized
+
+req requires user authentication
+
+similar to 403 forbidden
+    specifically for use when authentication is possible but has failed or not yet been provided
+
+res must include a WWW-Authenticate header field containing a challenge applicable to the requested source
+
+for missing or invalid auth token
+
+## 403 Forbidden
+
+for user not authorized to perform the operation
+    or the resource is unavailable
+
+legal req, but server is refusing to respond
+
+authentication will make no difference
+
+## 404 Not Found
+
+used whe nthe requested resource is not found
+    doesn't exist
+    401 or 403 service wants to mask for security reasons
+
+may be available in the future
+
+subsequent reqs by the client are permissible
+
+## 409 Conflict
+
+whenever a resource conflict would be caused by fulfilling the req
+
+duplicate entries and deleting root objects when cascade-delete is not supported are a couple of examples
+
+## 500 Internal Server Error
+
+generic error message given when no more qpecific message is suitable
+
+general catch all when the server-side throws an exception
 
 
 

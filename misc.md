@@ -333,3 +333,50 @@ whole state as a single javascript object
 all changes explicit
 
 more complex app == more state to keep track of
+
+## State Changes with Actions
+
+state tree read only
+
+dispatch an action
+    action is an object describing the change
+
+    only req is that it has a type quality
+
+describing in a minimal way what the data changed
+
+any change gets there through actions
+
+## Pure and Impure Functions
+
+### Pure
+
+return value depends solely on args
+
+no discernable side effects
+    database calls etc
+
+same args, same return value
+
+don't modify args
+
+### Impure
+
+may call database or network
+
+may operate on DOM
+
+may override values
+
+may have side effects
+
+some functions in Redux have to pure
+
+## The Reducer Function
+
+view layer most predictable when described as pure function
+
+state mutations need to be described as pure function
+    takes prev state and action
+    returns next state
+

@@ -140,3 +140,16 @@ function declarations = completely hoisted
 
 vars partially hoisted
     var declarations are hoisted but not assignments
+
+# `new` Keyword
+
+constructor functions
+
+creates a new object
+
+sets the object's prototype to be the prototype of the constructor function
+
+executes the contructor function with `this` as the newly created object
+
+returns the created object
+    if constructor returns an object, object is returned
