@@ -153,3 +153,61 @@ executes the contructor function with `this` as the newly created object
 
 returns the created object
     if constructor returns an object, object is returned
+
+# Event Bubbling
+
+when an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors
+
+almost all events bubble
+    focus event does not bubble
+
+## event.target
+
+handler on parent el can always ge the details about where it actually happened
+
+most deeply nested el that caused the event is called a target element, accessible as event.target
+
+event.target is the target element taht initiated the event
+    doesn't change through the bubbling process
+
+`this` is the current element, the one that has acurrently running handler on it
+
+`this`(event.currentTarget) is the clicked on form because the handle runs on it
+
+event.target is the concrete element isnide the form that actually was clicked
+
+## Stopping Bubbling
+
+bubbling event goes from the target element straight up
+    normally till <html> and then document object and some events event reach window
+
+event.stopPropagation() will decide that the event has gone far enough
+
+don't stop bubbling without real need
+
+## Capturing
+
+another phase of event processing
+
+rarely used, but can be useful
+
+DOM Events descrbe 3 phases of event propagation:
+    capturing phase: event goes down to the el
+
+    Target phase: the event reached the target element
+
+    Bubbling phase: the event bubbles up from the element
+
+event foes through thr ancestors chain down to the element(capturing)
+    then reahes the target
+
+    then goes up(bubbling)
+
+handlers added using on<event> property or using HTML attributes or useing addEventListener(event, handler) only run on 2nd and 3rd phase
+
+to catch an event on capturing phase, add 3rd arg to addEventListener to true
+    false(default): handler is set on the bubbling phase
+
+    true: handler is set on the capturing phase
+
+event.eventPhase that tells us the number us the number of the phase on which the event was caught
