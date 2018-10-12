@@ -728,6 +728,89 @@ POST: not displayed in the URL
 
 PUT replaces entire entity, while PATCH only updates the fields that were supplied
 
+# Cookies vs. localStorage vs. sessionStorage
 
+## localStorage and sessionStorage 
+
+localStorage and sessionStorage are relavtively new APIs
+    pretty much identical
+
+    sessionStorage only available during browser session
+        does survive page reloads
+
+        not window or tab closing
+
+ongoing data needs to be stored in localStorage
+
+localStorage and sessionStorage data can easily be read or changed from with the client/browser
+    don't rely for sensitive or security -related data
+
+## Cookies
+
+can be tampered with by user
+
+if storing sensitive info, use sessionStorage
+
+in not using SSL, cookie info can be intercepted in transit, especially on open wifi
+
+have a degree of protection
+    from Cross-Site Scipting(XSS)/Script injection
+
+        set HTTP only flag
+
+        modern browsers will prevent access to the cookies and values from JS
+
+    v important with auth cookies
+
+all cookies valid fo a page sent from brower to server for evety req to the same domain
+    bc cookies used for auth
+
+    includes original page req, Ajax reqs, images, stylesheets, scripts, fonts
+
+bc they are on every req, shouldn't store a lot of info
+
+browsers sometimes impose size limits
+
+used to store tokens for auth, session, advertising tracking
+
+## All Three
+
+only allow for storage of strings
+
+Session storage generally allows for storage of primitives or obnjects
+
+## Client-side vs. Server-side
+
+HTTP is stateless protocol
+    apps have no way of identifying a user from previous visits
+
+    session data usually relies on a cookie token to identify the user for repeat visits
+
+data will usually have a sliding expiry time
+    stored in-process
+        will be lost if the web server crashes or is restarted
+    externally in a state server or database
+        necessary when using a web-farm
+session data completely controlled by app
+    best place for anything sensitive or secure in nature
+disadvantage of server-side 
+
+data is scalability
+    server resources are required for each user for the duration of the session
+
+    data needed client side must be sent with each req
+
+session data must expire after given time to avoid all server resources being taken up by abandoned sessions
+
+when using session data
+    be aware of the possibility that data will ahve expired and been lost
+        esp on pages with long forms
+    
+    also lost if user deletes cookies or switches browsers/devices
+
+can use hidden HTML inputs to persist dat from one page of a form to another to avoid session expiration
+
+all are subject to same origin rules
+    browsers should prevent access to the data except the domanin that set the information to start with
 
 

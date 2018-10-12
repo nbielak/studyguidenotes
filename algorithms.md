@@ -229,3 +229,12 @@ at every iteration i, fn updates the ith entry in the lookuptable by combining t
 
 rn returns table[n]
 
+## Optimal Substructure Property
+
+dynamic programming:
+    overlapping subprohlems
+    optimal substructure
+
+problem has optimal substructure property if
+    optimal solution can be obtained by using optimal solutions of its sub problems
+

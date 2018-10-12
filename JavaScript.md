@@ -211,3 +211,36 @@ to catch an event on capturing phase, add 3rd arg to addEventListener to true
     true: handler is set on the capturing phase
 
 event.eventPhase that tells us the number us the number of the phase on which the event was caught
+
+# Event Delegation
+
+event delegation -> capturing and bubbling allow us to implement on eof the most powerful event handling pattern
+
+`event.target` to focus on specific element
+
+put single handle on the container
+
+in he handle - check the source of element `event.target`
+
+if event happened insida na element that interests us, handle the event
+
+simplifies initialization and saves memory
+    no need to add many handlers
+
+less code
+    when adding or removing elements, no need to add/remove handlers
+
+DOM modifications
+    we can mass add/remove elements with `innerHTML` and alike
+
+has limitations
+    event must be bubbling
+        some events do not bubble
+        
+        low level handlers should not use `event.stopPropagation()`
+
+    delegation may add CPU load
+        container-level handler reacts on events in any place of the container
+            no matter if they interest us or not
+
+            usually load is negligible, though
