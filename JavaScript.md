@@ -222,7 +222,7 @@ put single handle on the container
 
 in he handle - check the source of element `event.target`
 
-if event happened insida na element that interests us, handle the event
+if event happened inside an element that interests us, handle the event
 
 simplifies initialization and saves memory
     no need to add many handlers

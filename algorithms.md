@@ -238,3 +238,75 @@ dynamic programming:
 problem has optimal substructure property if
     optimal solution can be obtained by using optimal solutions of its sub problems
 
+## Solving a Dynamic Programming Problem
+
+faster than exponential brute methods
+
+easily proved
+
+### Step 1: Classifying a DP Problem
+
+typically, all problems that require maximization or minimization of certain quantities or counting problems that say to count arrangements under certain conditions
+    certain probability problems
+
+All satisfy overlapping subproblems property 
+
+most classic DP problems satisfy the optimal substructure property
+
+### Step 2: Decide the State
+
+DP problems about state and their transition
+
+state transition depends on choice of state definition
+
+State: set of params that uniquely identify a certain position or standing in the given problem
+    params should be as small as possible to reduce state space
+
+### Step 3: Formulating a Relation among States
+
+hardest part
+
+### Step 4: Adding Memoization or Tabulation for State
+
+store the state answer
+    directly access it from memory when needed
+
+## Memoization vs. Tabulation
+
+### Tabulation
+
+bottom up
+
+start at f(0) and go to f(n)
+
+iterative usually
+
+state transition relation is difficult to conceptualize
+
+code gets complex with a lot of conditions
+
+fast bc direct access to previous states from table
+
+if all subproblems must be solved at least once
+    bottom up will outperform top-down
+
+all entries in table filled one by one
+
+### Memoization
+
+start at f(n) asking for answers from subproblems down to f(0)
+
+recursive usually
+
+state transition easy to conceptualize
+
+clearer code
+
+slow due to recursion and return statements
+
+if not all subproblems need to be solved
+    this will outperform tabulation
+
+all entries in lookup table not necessarily filled
+
+
