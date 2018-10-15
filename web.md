@@ -813,4 +813,125 @@ can use hidden HTML inputs to persist dat from one page of a form to another to 
 all are subject to same origin rules
     browsers should prevent access to the data except the domanin that set the information to start with
 
+# XSS Attack
+
+Cross-site Scripting Attack
+
+client-side code injection
+    attacket can execute malicious scripts
+        malicious payload
+    into legit website or web app
+
+most rampant of web app vulnerabilites
+    occurs when a web app makes use of unvalidated or unencoded user input within the output it generates
+
+attacker does not target victim directly
+    would exploit vulnerability within a website or web app that victim would visit
+
+    using the website as a vehicle to deliver the malicious script to the victim's browser
+
+can be taken advantage of in:
+    VBScript
+    ActiveX
+    Flash
+
+most widely abused is JavaScript
+
+## How It Works
+
+attacker must first find a ay to inject a payload into a webpage that the victim visits
+
+could convince user to visit a vulnerable page with an inject JS payload
+
+website needs to directly include user input in its pages
+
+attacker can insert string that will be used within the web page and treated as code by the browser
+
+## Effects
+
+may not immediately stand out
+    browsers run JS in a very tightly controlled environment
+
+    JS limited access to the user's opeating system and files
+
+has access to all the same objects as website
+    cookies, which store session tokens
+
+    can then impersonate user
+
+JS can read and make arbitrary mods to the browser's DOM
+
+can use XMLHttpRequest to send HTTP reqs with arbitrary content to arbitrary destinations
+
+JS in modern browsers can leverage HTML5 APIs
+    access geolocation, webcam, mic,specific fils from the user's file system
+
+above with social engineering allow attaeckers to pull off advanced attacks
+    cookie theft
+    keylogging
+    phishing
+    identity theft
+
+## Anatomy of XSS attack
+
+needs 3 actors:
+    website
+    victim
+    attacker
+
+attacker injects payload in the websites database by submitting a vulnerable form with some malicious JS
+
+Victim reqs the web page from the website
+
+website servers the victim's browser the page with the attackers payload as part of the HTML body
+
+victim's broswers will execute the malicious script inside the HTML body
+
+## XSS Attack Vectors
+
+### <script> Tag
+
+most straight forward
+
+can either reference external JS code or embed the code within the sceript tag
+
+### <body> Tag
+
+using the onload attribute or other more obscure attributes such as the background attribute
+
+### <img> Tag
+
+some browsers will execute JS found in <img> tag
+
+### <iframe> Tag
+
+allows the embedding of another HTML page int othe parent page
+
+iframe can contain JS
+    the JS in the iframe does not have access tothe DOM of the parent page
+
+    due to the browser's Content Security Policy
+
+still effective for phishing
+
+### <input>
+
+if type attribute set to image
+    manipulated to embed a script
+
+### <link>
+
+link to external style sheets could contain a script
+
+### <table>
+
+background attribute of the table and td tags can be exploited to refer to a script instead of an image
+
+### <div>
+
+can spcify a background and thus, embed a script
+
+### <object>
+
+embed script from external site
 
