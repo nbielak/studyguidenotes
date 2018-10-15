@@ -244,3 +244,90 @@ has limitations
             no matter if they interest us or not
 
             usually load is negligible, though
+
+# ES5 vs ES6
+
+ES6 features:
+    syntactic sugar(class)
+    JS enhances(import)
+    fix some bad parts of JS (let)
+
+## Block Scope
+
+ES5 only had function level scope
+    wrap code in functions to create scope
+
+ES6 proviseds block level scoping
+    curly braces to scope
+
+    when we use let or const instead of var
+
+### Prevent Variable Hoisting Outside of Scope
+
+### Prevent Duplicate Variable Declaration
+
+ES6 deosn't allow duplicate declaration of variables with let or const in the same scope
+
+### Eliminates the Need for IIFE
+
+in ES5 had to use IIFE
+    ensure no pollution or overwriting of the global scope
+
+ES6 just use curly braces and const or let
+
+### babel
+
+a tool to convert ES6 to ES5
+
+### Trivial to Use Functions In Loops
+
+ES5 if function in loop
+    if that function tried to access the looping variable, `i`
+
+    bc of hoisting there would be an issue
+
+ES6 use let
+
+## Lexical "this"
+
+in ES5, `this` can vary based on how and where it is called
+
+ES6 fixes with lexical `this`
+
+ES6 uses simple fat arrow function and lexical this is created
+
+## Arguments
+
+es5, args acts like an array, but it isn't an  array
+    so array functions not available
+
+ES6, Rest parameters
+    `...args` is an array so can use array functions
+
+## Classes
+
+no such this as "Class" in JS
+    people have treated the function that creates objects as classes
+        function constructors
+
+Since JS doens't support "Classes"
+    just simulates via prototypes
+
+    syntax has been very confusing
+
+    esp when creating subclasses, calling functions on parent classes, etc
+
+ES6 brings class
+
+## Strict Mode
+
+`"use strict"`
+
+helps identify common issues and securing JS
+
+ES5 strict mode optional
+
+needed in ES6 for many features
+
+
+
