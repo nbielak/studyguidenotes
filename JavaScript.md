@@ -329,5 +329,100 @@ ES5 strict mode optional
 
 needed in ES6 for many features
 
+# Error Handling
+
+usually script dies in case of an error
+
+`try...catch` allows us to catch errors and do something
+
+## Try and Catch
+
+2 blocks: `try` and `catch`
+
+```js
+try {
+
+  // code...
+
+} catch (err) {
+
+  // error handling
+
+}
+```
+first try is executed 
+
+if no errors, catch ignored
+
+if errors, try is stopped
+    control flows to the beginning of catch
+
+    err contains error object with info
+
+`try...catch` only works for runtime errors
+    needs to be valid JS
+
+    only errors that occur in valid code
+
+    also called exceptions
+
+`try...catch` works synchronously
+
+## Error Object
+
+built in errors have 
+    name: error name
+
+    message: textual message about error details
+
+    stack: current call stack; a string with info about the sequence of nexted ccalls that led to the error
+
+## Throwing Our Own Errors
+
+### throw operator
+
+generates an error
+
+`throw <error object>`
+anything can be used as error obj
+    better to use objects
+    preferably with name and message properties
+
+can use built in error constructors to create error objects
+
+## Rethrowing
+
+`try...catch` meant to catch incorrect data
+    catch gets all errors from try
+
+catch should only process errors that it knows and 'rethrows' all others
+    catch gets all errors
+
+    in catch block analyze the object err
+
+    if we don't know how to handle it, throw err
+
+## Try, Catch, Finally
+
+if finally clause exists
+    runs in all cases
+    after try if no errors
+    after catch if errors
+
+finally clause works for any exit from `try...catch`
+    includes explicit return
+
+`try...finally` useful
+    apply it when we don't want to hanlde errors right herre
+
+    want to be sure that process we started are finalized
+
+## Global Catch
+```js
+window.onerror =function(message, url, line, col, error) {
+
+};
+```
+send the error message to developers
 
 
