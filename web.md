@@ -935,3 +935,94 @@ can spcify a background and thus, embed a script
 
 embed script from external site
 
+# CSRF
+
+Cross Site Request Forgery
+
+not taken as seriously as it should
+    stealthy and powerful attack
+
+have major limitations though
+    only allows for state changes to occur
+
+    so cannot cater attacks that require the attacker to receive the contents of the HTTP response
+
+malicious entity tricks victim into performing actions on behalf of the attacker
+    impact depends on level of permissions of victim
+
+    admin vs low level user
+
+    exploits that web app completely trusts user after verifaction
+
+1st part
+    trick the victim into clicking a link or loading up a page
+        social engineering
+2nd part
+    send crafted req to the victim's browser
+
+    sent with values that attacker wants
+
+    cookies, etc
+
+    any request made with victim's creds will be legit
+
+when req is made to web app
+    browser check if it has any cookies for app
+
+    auth data will be included in req sent to web app
+
+    provides seamless experience, no reauthentication for every page
+
+attacker may use CSRF to send reqs as if the victim is sending them
+    w/o website being able to distinguish
+
+## Understanding how an attack is carried out
+
+only effective if user is authenticated
+    victim must be logged in
+
+bc CSRF used to bypass auth process
+    some elements are not affected by CSRF
+
+GET requests idempotent
+    should not be used to perform state changes
+
+## Preventing CSRF Vulnerabilities
+
+### Ant-CSRF Tokens
+
+most popular
+
+token associated with user and can be found as a hidden value in every state changing form 
+
+web server generates token
+
+token is stattically set as a hidden input on the protected form
+
+form is submitted by the user
+
+token i included in the  post data
+
+web app compares the token generated with the token sent in through the req
+    match: req is valid, senf through form in web app
+
+    no match: req considered illegal and rejected
+
+tokens invalidated after some time
+
+attacker would need to guess token
+
+token needs to be cryptographically secure
+
+### Same-Site Cookies
+
+CSRF attacks only possible since cookies are sent with any req sent to a particular origin
+    related to that cookie
+
+flag can be set against a cookie, turning it into a same-site cookie
+    can only be sent if req is being made from same origin that is related to the cookie being sent
+
+    port and host are the same for both
+
+not all browsers support them
+
