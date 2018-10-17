@@ -309,4 +309,81 @@ if not all subproblems need to be solved
 
 all entries in lookup table not necessarily filled
 
+# Heap
 
+## Constraints
+
+heap is a binary tree 
+    must have all its nodes in a specific order
+
+    shape must be complete
+
+Complete tree
+    all levels of tree must be completely filled
+        except last
+
+        last level must have the left most noedes filled
+
+    root node must have all of its children be wither greater than or less than or equal to its children
+
+max heap 
+    every node is greater than or equal to parent
+
+min heap is opposite of max heap
+    heap order property
+
+    every single node is less than parent
+
+left nodes don't have to be smaller than right nodes
+
+## Growing a Heap
+
+can only ever add node to the left most available spot in the tree
+
+must swap until val doens't violate heap order property
+
+## Removing Node
+
+most heaps remove root node, since usually concerned with min or max value
+
+to maintain shape/structure
+    remove and replace root node with left most, lowest-level leaf node
+
+    swap until heap order is satisfied
+        swapping with larger of two children
+
+        bubble down
+
+## Queueing Heaps
+
+heaps partially sorted
+    there's an order
+
+    max or min is always root
+
+if we know the index of the root node
+    manipulate that index to determine where its child nodes live in the array
+        2i + 1
+        2i + 2
+
+root node always at index 0
+
+heaps implemented as arrays because they are super effienient ways of representing priority queues
+    a queue data structure with some additional properties
+
+
+## Binary Heap
+
+binary heap one data structure to model Priority Queue Abstract Data Structure
+
+In PQ, each el has a priority
+
+el with higher priority served before an el with lower
+
+Complete Binary Tree: every level in the binary tree, except the lowest is completely filled
+    all vertices in last level are as far left as possible
+
+Binary Max Heap Property: 
+    parent of each vertex, except root, contains value > value of that vertex
+
+If we have binary heap of N elements, its height will not be taller than O(log N)
