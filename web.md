@@ -1026,3 +1026,26 @@ flag can be set against a cookie, turning it into a same-site cookie
 
 not all browsers support them
 
+# AJAX
+
+AJAX = Asynchronous JavaScript And XML
+    built in XMLHttpRequest obj
+    JavaScript and HTML DOM
+
+    might use XML to transport data
+        equally common to transport data as plain text or JSON text
+
+allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes
+    update parts of web page w/o reloading whole page
+
+## XMLHttpRequest Object
+
+supported on all browsers
+
+`let xhr = new XMLHttpRequest();`
+
+no access across domains
+    both web page and XML file it loads must be located on the same server
+
+A callback function is a function passed as a parameter to another function.
+
