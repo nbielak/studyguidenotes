@@ -425,4 +425,143 @@ window.onerror =function(message, url, line, col, error) {
 ```
 send the error message to developers
 
+# Event Reference
 
+DOM events sent to noticy code of interesting things that have taken place
+
+can represent basic user interactions to automated notifications of things happening in the rendered model
+
+## Page Lifecycle
+
+DOMContentLoaded - browser fully loaded HTML and DOM tree is built
+    external resources may not be loaded
+        pics
+        style sheets
+    
+    Dom is ready so handler can look up DOM nodes, initialize interface
+
+load - browser loaded all resources
+    additional resources loaded
+
+    get image sizes
+
+beforeunload/unload - when user leaves page
+    check if user saved the changes and aske them whether they really want to leave
+
+### DOMContentLoaded
+
+happens on the document object
+
+must use `addEventListener` to catch it
+
+#### Scripts
+
+when HTML runs into a `<script>` in the text
+    can't continue building the DOM
+
+    must execute script immediately
+
+DOMContentLoaded may only happen after all such scripts are executed
+
+external scripts also put DOM buildeing to pause
+
+only exception:
+    scripts with async and defer attributes
+
+    they tell the browser to continue processing without waiting for the scripts
+
+    lets user see the page before sciprts finish loading
+        good for performance
+
+#### Scripts with async and defer
+
+only work for external scripts
+    ignored if no src
+
+tell the browser that it may go on working with the page
+    load the scrip in background
+
+    run the script when it loads
+
+    script doesn't block DOM buildeing and page rendering
+
+##### Order
+
+scripts with async execute in the load first order
+    their document order doesn't matter
+
+    whatever loads first runs first
+
+scripts with defer always esecute in the document order
+
+##### DOMContentLoaded
+
+scripts with async
+    load and execute while the doc has no yet been fully downloaded
+
+    happens if scripts are small or cached and doc is long enough
+
+scripts with defer 
+    execute after the doc is loaded and parsed
+
+    right before DOMContentLoaded
+
+async used for independent scripts like counters or ads
+    don't need acces to page content
+
+defer used for scripts that need DOM and/or their relative execution order is important
+
+#### styles
+
+external style sheets don't affect DOM
+    DOMContentLoaded does not wait for them
+
+if we have script after style
+    script must wait for the sytlesheet to execute
+
+script may want coordinates and other style-dependent properties of els
+    so has to wait
+
+as DOMContentLoaded waits for scripts, it now waits for styles before them as well
+
+#### Built in Browser Autofill
+
+Firefox, Chrome, and Opera autofill forms on DOMContentLoaded
+    username, password
+
+if DOMContentLoaded is postponed by long-loading scripts
+    autofill also awaits
+
+### window.onload
+
+load event on the window obj triggers when the whole page is loaded
+    including style, images, and other resources
+
+### window.onunload
+
+when visitor leaves the page
+
+do something there taht doesn't involve delay
+    closing related popup windows
+
+    can't cancel the transition to another page
+
+### window.onbeforeunload
+
+if visitor initiated navigation away from the page or tries to close the window
+    beforeunload handler asks for additional confirmation
+
+### readyState
+
+document.readyState gives us info
+    "loading"- doc is loading
+    "interactive" - doc was fully read
+    "complete" - doc fully read and all resources loaded
+
+can check document.readyState and set up a handler or execute the code immediately if it's ready
+
+readystatechange event that triggers when the state changes
+
+    alternative mechanics of tracking the doc loading state
+
+    rarely used
