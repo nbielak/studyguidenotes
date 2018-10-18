@@ -1135,3 +1135,186 @@ Each origin gerts its own separate storage
 Cookies use a separate definition of origins
     page can set a cookie for its own domain or any parent domain
         as long as the parent domain is not a public suffix
+
+# Cross-Origin Resource Sharing
+
+CORS
+
+mechanism that uses additional HTTP headers to tell browser to let web app running at one origin access selected resources from server at different origin
+
+    cross-origin HTTP req
+
+browsers restrict cross-origin HTTP reqs initiated within scripts
+
+supports secure cross-orign reqs and data transfers between browsers and servers
+
+modern browsers use CORS in an API container to mitigate rists of cross origin HTTP reqs
+    XMLHttpRequest
+
+    Fetch
+
+## What Requests Use CORS?
+
+used to enable
+    XMLHttpRequest or Fetch APIs in a cross-site manner
+
+    Web Fonts
+        cross-domain font usage in @font-face
+
+        so servers can deply TrueType fonts taht only be cross-site loaded and used by permitted sites
+
+    WebGL textures
+
+    Images/video frames drawn to a canvas using drawImage()
+
+## Functional Overview
+
+works by adding new HTTP headers 
+    allow servers to descibe the set of origins permitted to read taht info using a browser
+
+HTTP req methods that can cause server data side-effects
+    browsers "preflight" the req
+        soliciting supported methods from the server with HTTP OPTIONS req method
+
+        upon approval, send the req with the actual HTTP req method
+
+Servers also notify clients whether credentials must be sent with reqs
+    cookies, HTTP Auth data
+
+CORS failures result in errors
+    for security, specifics not available to JS code
+
+    look at browser console for details
+
+some reqs don't trigger a CORS preflight
+    simple requests
+
+    only allowed methods
+        GET
+        HEAD
+        POST
+
+    besides headers set automatically by the user agent, only headers which are allowed to be manually:
+        those which Fetch spec defines as being a "CORS-safelisted request-header"
+
+    only allowed values for the Content-Type headers are:
+        application/x-www-form-urlencoded
+
+        multipart/form-data
+
+        text/plain
+
+    No event listeners are registered on any XMLHttpRequestUpload obj used in req
+        accessed using the XMLHTtpRequest.upload property
+
+    No ReadableStream object is used in the req
+
+no res data is released to requester unless server sends appropriate header
+    sites that prevent CSRF have nothing new to fear from HTTP access protocol
+
+## HTTP Response Headers
+
+headers that servers send back for access control requests
+
+### Access-Control-Allow-Origin
+    
+for returned resource
+
+    `Access-Control-Allow-Origin: <origin> | *`
+
+specifies either a single origin
+    tells browsers to allow that origin to access a resource
+
+the "*" wildcard
+    reqs w/o credentials
+
+    to allow any origin to access the resource
+
+### Access-Control-Expose-Headers
+
+lets server whitelist headers that browsers areallowed to access
+
+```js
+Access-Control-Expose-Headers: X-My-Custom-Header, X-Another-Custom-Header
+```
+
+allows headers to be exposed the browser
+
+### Access-Control-Max-Age
+
+how long the results of a preflight req can be cached
+
+```js
+Access-Control-Max-Age: <delta-seconds>
+```
+
+### Access-Control-Allow-Credentials
+
+whether or not the res to the req can be exposed when credentials flag is true
+
+when used in res of preflight req
+    should actual req be made using credentials
+
+```js
+Access-Control-Allow-Credentials: true
+```
+
+### Access-Control-Allow-Methods
+
+specifies methods allowed when accessing the resource
+    used in res to preflight req
+
+```js
+Access-Control-Allow-Methods: <method>[, <method>]*
+```
+
+### Access-Control-Allow-Headers
+
+res to preflight req
+    which HTTP headers can be used when making the req
+
+```js
+Access-Control-Allow-Headers: <field-name>[, <field-name>]*
+```
+
+## HTTP Request Headers
+
+headers that clients may use when issuing hTTP reqs
+    to make use of cross-origin sharing feature
+
+set when making invocations to servers
+
+developers using cross-site XMLHttpRequest capability do not need to set any x-origin sharing req headers programmatically
+
+### Origin
+
+the origin of the cross-site access req or preflight req
+
+```js
+Origin: <origin>
+```
+
+URI indicating the requesting server
+
+no path info, just name
+
+can be empty string
+    useful for if source is a data URL
+
+origin header is always sent
+
+### Access-Control-Request-Method
+
+used when issuing a preflight req to let server know what HTTP method will be used for req
+
+```js
+Access-Control-Request-Method: <method>
+```
+
+### Access-Control-Request-Headers
+
+issuing preflight req to let server know what HTTP headers will be used for actual req
+
+```js
+Access-Control-Request-Headers: <field-name>[, <field-name>]*
+```
