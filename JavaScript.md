@@ -583,3 +583,77 @@ let and const not hoisted, block scoped
 
 const cannot be reassigned
     props can be changed
+
+# Strict Mode
+
+"use strict"
+    at beginning of script or function
+
+global if declared at beginning of script
+
+inside function
+    has local scope
+
+not statement, expression
+
+indicate that the code should be executed in strict mode
+
+connot use undeclared variables
+
+## Purpose
+
+makes it easier to write secure JS
+    bad syntax => real errors
+
+    mistyping variable name creates new global variable 
+        in strict, throw error
+
+# Rest and Spread
+
+many JS functions suppor tan arbitrary number of args
+
+## Rest Parameters
+
+`...`
+
+fucntion can be called with any number of arguments
+    only defined ones will be counted
+
+rest params can be mentioned in a cuntion definition with `...`
+    gather the remaining params into an array
+
+must be at the end
+    last variable in function definition
+
+## The Arguments Variable
+
+special array like obj named arguments
+    contains all arguments by their index
+
+in older versions, only way to get all the args of the function, no matter the #
+
+array-like and iterable, but not an array
+    doesn't support array methods
+
+always contains all args
+    can't capture them partially, like with rest parameters
+
+arrow functions doen't have "arguments"
+    take from outer "normal" function
+
+## Spread Operator
+
+parameters => array
+
+`...arr` expands an iterable object arr into the list of args
+
+can pass multiple iterables
+
+combine with normal values
+
+used to merge arrays
+
+turn string into array of chars
+    could also use `Array.from(str)`
+
+internally uses iterators to gather els, same way `for..of` does
