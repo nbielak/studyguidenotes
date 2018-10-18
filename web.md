@@ -1318,3 +1318,138 @@ issuing preflight req to let server know what HTTP headers will be used for actu
 ```js
 Access-Control-Request-Headers: <field-name>[, <field-name>]*
 ```
+
+# SQL vs. NOSQL
+
+MongoDB - NoSQL
+    not SQL calls against tradition tables and rows
+
+## Genesis of NoSQL
+
+used to have structured data
+    numbers, dates, etc
+
+    displayed in titled columns and rows
+
+    run queries in SQL
+
+wanted intelligence from data
+    how were sales, regions, etc
+
+data divided into operational and analytical
+    data warehouses
+
+more data, less like SQL
+
+SQL relational servers are built to handle demand of financial transactions
+
+designed around tenets of ACID
+    Atomicity
+    Consistency
+    Isolation
+    Durability
+
+ensure only one chage can be written to a data field at a time
+    no conflicting transactions
+
+    no matter which server you ask, get the same value
+
+ACID doesn't matter much for data analysis
+    database locks of SQL can get in the way
+
+interntet resulted in "web-scal attacks"
+    hunderd -> millions of people wanting access to same data sources at the same time
+
+to scale you could buy a bigger server
+    expensive
+
+    companies turned to distributing database out over hundreds or thousands of servers
+
+NoSQL database associated with big data tasks, handling large volumes of data in various forms
+    columnar dbs, for dealing with massive collections of simple structured data
+    
+    Key-value and other unstructured dbs
+        MongoDB
+
+        use rules defined by programmers to comb through large amounts of unstructured data, includeing docs and websites
+
+    High-speed databases for processing large streams of data with low latency
+        those diverging tasks have driven the evolution of dif tech taht get lumped together as NoSQL
+
+        provide some of the relational quality tuned to handle demands of big data
+
+## Hadoop
+
+not really considered db
+
+designed as cheap way to store data and process it
+
+enabled by Google's MapReduce
+    process and generate large data sets with a parallel, distributed algorithm on a cluster
+
+Hadoop not user-friendly
+    needs trained, talented experts
+
+needs db handlers and front end
+
+land data, find data scientists to find relationships, turn that into requirements that yield a system
+
+## MongoDB
+
+most popular NoSQL database
+
+designed from onset to make degs maximally productive
+
+major cost isn't servers or hardware
+    it's developer's speed
+
+## Couchbase
+
+cluster of unreliable commodity hardware
+
+open sourece, NoSQL distributed JSON-based document store
+
+CP type system
+    gives consistency and partition tolerance
+
+CAP 
+    consistency
+    availability
+    partitionability
+
+    distributed computer system can only gurantee 2/3
+
+outgrowth of CouchDB
+    opensource database
+
+performace in terms of user scale
+
+elasticity
+    ability to grow, shrink, cluster while under load without downtime
+
+Cross Datacentert Replication
+    XDCR
+    ability to replicate data from one cluster to another
+        primarily for disaster recovery
+
+not so agile
+
+## VoltDB
+
+NewSQL
+    reworking of relational database management systems
+    
+    promised extreme scalability for online transaction processing (OLTP)
+        like NoSQL
+    
+    same guarantees of ACID
+
+VoltDB is one example
+    distributed, in-memory, parallel NewSQL relational db
+
+dat's more useful when fresh
+
+## Convergence
+
+most use both SQL and NoSQL
+    integrating
