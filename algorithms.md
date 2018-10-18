@@ -406,3 +406,15 @@ Process:
     2. swap root with furthest value and pop
 
     3. heapify
+
+# Merge Sort
+
+sorts collection by breaking it into half
+
+then sorts those two halves and then merges them together to form one, sorted collection
+    recursion
+
+divide and conquer
+    breaks down problem into simpler version of self
+
+
