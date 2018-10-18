@@ -387,3 +387,22 @@ Binary Max Heap Property:
     parent of each vertex, except root, contains value > value of that vertex
 
 If we have binary heap of N elements, its height will not be taller than O(log N)
+
+## Heap Sort
+
+heap is nothin more than a binary tree with some additional rules
+    heap structure
+        left to right
+    ordered as max or min heap
+
+heap sort alg is a sorting technique that is based exclusively upon a binary heap data structure
+    find largest el and sort it at the end of an unsorted collection
+
+select root node of a heap and add to end of array
+
+Process:
+    1. Build a heap from all of the data
+
+    2. swap root with furthest value and pop
+
+    3. heapify
