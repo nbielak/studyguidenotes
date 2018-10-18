@@ -565,3 +565,21 @@ readystatechange event that triggers when the state changes
     alternative mechanics of tracking the doc loading state
 
     rarely used
+
+# Variables
+
+var only option before ES6
+
+vars and funcs declared inside another function cannot be accessed by any of the enclosing scopes
+    function scoped
+
+vars declared inside a block-scope can be accessed from outsidfer of the opening and closing curly braces of block
+    if statements and for loops
+
+undeclared variable w/o var, let or const
+    creates var variable in global scope
+
+let and const not hoisted, block scoped
+
+const cannot be reassigned
+    props can be changed
