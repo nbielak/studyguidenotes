@@ -654,6 +654,7 @@ combine with normal values
 used to merge arrays
 
 turn string into array of chars
-    could also use `Array.from(str)`
+    could also use `Array.from(str)
 
 internally uses iterators to gather els, same way `for..of` does
+

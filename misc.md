@@ -380,3 +380,46 @@ state mutations need to be described as pure function
     takes prev state and action
     returns next state
 
+# SQL Query Order
+
+1. FROM and JOIN
+    includes sub queries in this clause
+
+    can cause temporary tables to be created under the hood
+
+2. WHERE
+    first pass constraints applied to the individual rows
+
+    rows that do not satisfy are discarded
+
+    only access columns directly requested in the FROM clause
+
+    SELECT aliases not accessible
+
+3. GROUP BY
+    remains rows grouped based on common values in the GROUP BY clause
+
+    only be as many rows asthere are unique values in that column
+
+    only need to use this when you have aggregate functions
+
+4. HAVING
+    if GROUP BY, then constraints in HAVING are applied to the grouped rows
+
+    aliases not accessible
+
+5. SELECT
+    select expressions computed
+
+6. DISTINCT
+    rows with duplicate values discarded
+
+7. ORDER BY
+    rows sorted by the specified data in ascending or descending order
+
+    can ref aliases
+
+8. LIMIT/OFFSET
+    rows outside of these discarded
+    
+    leaving final set of rows
