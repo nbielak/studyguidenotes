@@ -1049,3 +1049,89 @@ no access across domains
 
 A callback function is a function passed as a parameter to another function.
 
+# Same Origin Policy
+
+## Definition of an Origin
+
+two pages have same origin if protocol, port, and host are the same for both pages
+
+    "scheme/host/post tuple"
+        where tuple is a set of three components that together compromise a whole
+
+### Inherited Origins
+
+scripts executed from pages with `about:black` or `javascript:` URL inherit the origin of the doc that opened the URL
+    bc these types of URL od not contain info about the server of origin
+
+    about:blank used as URL of a new empty popup window
+
+Internet explorer exceptions
+    trust zones
+        if both domains are in highly trusted zone, then same origin limitations are not applied
+            corporate domains
+
+    Port: IE doesn't port into Same Origin components
+
+## Changing Origin
+
+a page may chage its own origin
+
+script can set the value of document.domain to its current domain
+    or superdomain of current domain
+
+if superdomain, shorter domain is used for subsequent origin checks
+
+port number kept separately by the browser
+
+any call to setter causes port number to be overwritten to null
+
+## Cross-Origin Network Access
+
+same origin policty controls interactions between two diferent origins
+    XMLHttpRequest or <img> els
+
+3 categories:
+    * cross origin writes typically allowed
+        links, redirects, forms
+
+    * cross origin embedding allowed
+
+    * cross-origin reads typically not allowed
+        read access leaked by embedding
+
+        read width and heigh of an embedded image, actions of embedded script, or availability of embedded resource
+
+### How to Allow Access
+
+use cors to allow cross origin access
+
+part of HTTP that lets servers share with clients information about what hosts are permitted to load within content loaded from that server
+
+### How to Block Cross Origin Access
+
+CSRF token
+    cross-site request forgery
+
+
+ensure that resource is not embeddable
+
+ensure taht your resource cannot be interpreted as one of the embeddable formats listed above
+    browser does not respect content-type
+
+## Cross-Origin Script API Access
+
+JavaScript APIs allow docs to directly reference each other
+
+when two docs don't have the same origin
+    refs provide very limited access to window and location objects
+
+## Cross-Origin Data Storage Access
+
+access to data stored in localStorage are separated by origin
+
+Each origin gerts its own separate storage
+    JS in one origin cannot read from or write to the storage belonging to another
+
+Cookies use a separate definition of origins
+    page can set a cookie for its own domain or any parent domain
+        as long as the parent domain is not a public suffix
