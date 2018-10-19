@@ -417,4 +417,30 @@ then sorts those two halves and then merges them together to form one, sorted co
 divide and conquer
     breaks down problem into simpler version of self
 
+# Counting Sort
+
+technique based on keys between a specific range
+
+counting num of objs having disting key values
+
+1. take a count array to store the count of each unique object.
+
+2. Modify the count array such that each element at  each index stores the sum of previous counts
+    modified count array indicates the position of each object in the output sequence
+
+3. Output each object from the input sequence followd by decreasin its count by 1
+
+O(n+k)
+    n is num of els in array
+
+    k is range of input
+
+efficient if the range of input data is not significantly greater than the number of objects
+
+not comparison based sorting
+    O(n) run time
+
+often used as a sub-routine to another sorting alg like radix sort
+
+uses partial hashing to count the occurentces of the data object in O(1)
 
