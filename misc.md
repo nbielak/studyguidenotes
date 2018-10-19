@@ -423,3 +423,25 @@ state mutations need to be described as pure function
     rows outside of these discarded
     
     leaving final set of rows
+
+# SQL JOINS
+
+inner, left, right, full
+
+Inner Join
+    where Venn Diagram meets
+
+    returns records at the intersection of two tables
+Left Join
+    everything in left side and center
+
+    all records from a and anything matching from b
+
+    NULL if no info
+Right Join
+    everything in right side and center
+
+    mirror to left
+Full Join
+    everything
+
