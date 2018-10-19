@@ -658,3 +658,42 @@ turn string into array of chars
 
 internally uses iterators to gather els, same way `for..of` does
 
+# Bind
+
+lose `this` with object methods and passing object methods along
+
+## Losing this
+
+once method is passed elsewhere seperately from obj 
+    this is lost
+
+    lose conext method defined in
+
+## Solution 1: Wrapper
+
+a wrapping function
+
+receives user from outer lexical environment and then calls the method normally
+
+if obj changes value, it will call the wrong obj
+
+## Solution 2: Bind
+
+`func.bind(context)`
+
+function fixed to this
+
+```js
+let user = {
+  firstName: "John"
+};
+
+function func() {
+  alert(this.firstName);
+}
+
+let funcUser = func.bind(user);
+funcUser(); // John
+```
+
+
