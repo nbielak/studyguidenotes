@@ -1453,3 +1453,111 @@ dat's more useful when fresh
 
 most use both SQL and NoSQL
     integrating
+
+## More on SQL vs. NoSQL
+
+relational vs. non-relational
+    how they're built
+    type of info
+    how they store
+
+relational dbs structured
+    like phone book with name, number, address
+
+non-relational dbs document oriented and distributed
+    file folders that hold everythign from a person's address and phone number to their FB likes 
+
+### SQL: Relational DBs
+
+more rigid, structured
+
+two or more tables with cols and rows
+    each row an entry
+
+    each col sorts a very specific type of info
+
+relationship called schema
+    schema must be defined before anything added
+
+stored data msut be structured well
+    a well designed schema minimizes data redundancy
+
+    prevents tables from becoming out-of-sync
+        critical to business recording financial transactions
+
+Structure Query Language
+    programming language used by database architects to design relational databases
+
+    exectutes queries, retrieves data, edits data, deletes, creates new records
+
+    lightwieght, declarative
+
+    like a server-side-script
+
+    JOIN clause powerful
+        developers can retreive data stored across multiple tables
+
+    fits well into many software stacks
+        LAMP, Ruby-based stacks
+
+### NoSQL DBs
+
+flexible
+
+document oriented
+    non structured data stored in a single document that can be easily found but isnt' necessarily categorized into fields
+
+    storing data in bulk requires extra processing effort
+
+eases of access
+    sidestep relational issues with APIs that allow devs to execute queries wihtout having to lear SQL
+
+#### Common Types of NoSQL DBs
+
+1. key-value model
+    least complex
+
+    stores data in a schema-less way that consists of indexed keys and values
+
+2. Column store
+    wide column store
+    stores data tables as coluns rather than rows
+
+    sectioning out columns allows for excellent scalability and high performance
+
+3. Document database
+    key-value concept with complexity
+
+    each doc has its own data and unique key, used to retreive it
+
+    great option for storing, retrieving, and managing data that's document oriented but still somewhat structured
+
+
+### Reasons for SQL DB
+
+need to ensure ACID compliance
+    reduces anomalies and protects integrity of your db
+
+    prescribes exactly how transactions interact with the db
+
+    NoSQL tends to sacrifice ACID compliancy flr flexibility and processingspeed
+
+data is structured and unchanging
+    if not growing and don't need more servers
+
+    consistent data
+
+### Reasons for NoSQL
+
+storing large volumes of data that have little to no structure
+    sets no limits on the types of data you can store together
+
+    add diffent new types as your needfs change
+
+    can store data in one place w/o defining what types of data those are in advance
+
+making the most of cloud computing and storage
+    excellent for cost saving, but requires data to be easily spread across multiple servers to scale up
+
+Rapid development
+    data doesn't need to be prepped ahead of time
