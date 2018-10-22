@@ -696,4 +696,40 @@ let funcUser = func.bind(user);
 funcUser(); // John
 ```
 
+# Function Object
 
+functions are objects
+
+callable action objects
+
+## Name Property
+
+contain a few usable properties
+    name is the name property
+
+function.name
+
+## Length Property
+
+returns number of function parameters
+
+rest parameters not counted
+
+used for introspection in functions that create other functions
+
+## Custom Properties
+
+add props of our own
+
+property is not a variable
+
+## Named Function Expressions
+
+NFE
+    function expressions that have names
+
+allows the function to reference itself internally
+
+is not visible outside of the function
+
+function name may change, this ensures that won't affect this

@@ -445,3 +445,15 @@ Right Join
 Full Join
     everything
 
+# SQL Subqueries
+
+inner or nexted queries
+
+perform operations in multiple steps
+
+easiest to start with the FROM
+
+first inner query is run
+    then outer query runs with the results of the inner query
+
+## Subqueries in Conditional Logic
