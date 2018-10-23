@@ -444,3 +444,20 @@ often used as a sub-routine to another sorting alg like radix sort
 
 uses partial hashing to count the occurentces of the data object in O(1)
 
+# Radix Sort
+
+lower bound of comparison sort is O(nlogn)
+
+counting sort does it in O(n+k)
+
+do digit by digit sort starting from least significant digit to most significant
+    uses counting sort as subroutine
+
+O(d *(n+b))
+    d being number of digits
+
+constant factors hidden in asymptotic notation higher for radix sort
+
+quicksort uses hardware caches more effectively
+
+counting sort takes extra space
