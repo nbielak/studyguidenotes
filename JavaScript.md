@@ -733,3 +733,13 @@ allows the function to reference itself internally
 is not visible outside of the function
 
 function name may change, this ensures that won't affect this
+
+# Function Expression vs. Declaration
+
+function expression is created when execution reaches it 
+    usable from then if not hoisted
+
+function declaration
+    can be called before and after defined
+    
+    hoisted
