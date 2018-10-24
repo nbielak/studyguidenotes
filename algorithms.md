@@ -461,3 +461,6 @@ constant factors hidden in asymptotic notation higher for radix sort
 quicksort uses hardware caches more effectively
 
 counting sort takes extra space
+
+# Binary Search Trees
+
