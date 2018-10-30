@@ -464,3 +464,15 @@ counting sort takes extra space
 
 # Binary Search Trees
 
+allow for fast insertion
+
+binary tree
+
+everything in left sub tree less than root
+
+everything in right sub tree greater than root
+
+tree has pointers
+    parent and child
+
+O(n) insertion
