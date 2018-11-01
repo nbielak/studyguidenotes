@@ -743,3 +743,21 @@ function declaration
     can be called before and after defined
     
     hoisted
+
+# Value vs. Reference
+
+primitives assigned by value
+    null
+    undefined
+    boolean
+    number
+    string
+    symbol
+
+compound values always create a copy of the reference on assignment
+    objects
+    arrays
+    funciongs
+
+to copy a compound value by value, you need to make a copy of it
+    ref does not point to original value
