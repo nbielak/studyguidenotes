@@ -761,3 +761,46 @@ compound values always create a copy of the reference on assignment
 
 to copy a compound value by value, you need to make a copy of it
     ref does not point to original value
+
+# Types & Coersion
+
+7 types:
+    null
+    undefined
+    boolean 
+    number 
+    string 
+    object
+    symbol
+
+all primitives except for object
+
+undefined = absence of definition
+    default val for uninitialized vars, func args not provided, missing props of objs
+
+    funcs return undefined when nothing returned explicitly
+
+null = absence of value
+    assignment value to a var
+
+    represents no value
+
+Falsy values
+    ""
+    0
+    null
+    undefined
+    NaN
+    false
+
+anything not falsy is truthy
+    boolean coerced to true
+
+    empty arrays, objs, and func = true
+
+## String and Number Coersion
+
+`+` for both number addition and string concatentation
+
+`*`, `/`, `-` exclusively for numberic operations
+    forces strings to be coerced into a number
