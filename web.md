@@ -1561,3 +1561,61 @@ making the most of cloud computing and storage
 
 Rapid development
     data doesn't need to be prepped ahead of time
+
+# Scalability
+
+## Vertical Scaling
+
+get more RAM, processing, disk space
+
+exhaust financial resources or state of the art abilities
+
+## Horizontal Scaling
+
+a bunch of cheaper machines
+
+load balancers distribute requests
+
+Round Robin
+    start with server one...n
+
+    and wrap around
+
+    one server could get overloaded
+
+    caching can cause heavier load on servers
+
+load balancing to not busy servers
+    break session
+
+    no redundancy, bad if anything breaks
+
+### RAID
+
+Redundant Array of Independent Discs
+
+RAID0
+    stripe data across them
+        write to one then the other then the first...
+
+    doubles speed of writing
+
+RAID1
+    mirror file
+
+    store both places
+
+    a little slower
+
+RAID10
+    combination of RAID0 and RAID1
+
+RAID5
+    3-5 drives, but one is redundant
+
+RAID6
+    any two drives can die, but data still stored
+
+### Load Balancing
+
+
