@@ -476,3 +476,49 @@ tree has pointers
     parent and child
 
 O(n) insertion
+
+# AVL Trees
+
+way to keep binary trees balanced
+
+height of node = level of node
+    longest path of node to leaf
+
+    max(height left child, height of right child) + 1
+
+depth from root to node
+
+store heights and when too large, fix
+
+null left/right = -1
+
+require heights of left and right of every node to differ by at most 1
+
+worst case when right subtree has height +1 over left of every node
+
+## AVL Insert
+
+simple BST insertion
+
+fix AVL property from changed node up
+    suppose x is lowest node violating AVC
+
+    assume x.right higher
+
+    if x right child is right-heavy or balanced
+        RightRotation(x)
+    else 
+        RightRotation(z)
+        LeftRotation(x)
+
+Rotations
+    O(1)
+
+    left-rotate - root moves left
+    right ^ but right
+
+## AVL Sort
+
+insert n items - O(nlogn)
+
+in-order traversal - O(n)
