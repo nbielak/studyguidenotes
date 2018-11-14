@@ -1618,4 +1618,37 @@ RAID6
 
 ### Load Balancing
 
+can use software or hardware
+    hardware more expensive
+
+### Sticky Sessions
+
+shared storage one way
+
+cookies
+    store id of server in cookies
+
+    use random number
+        load balancer knows which to go to
+
+### Caching
+
+MySQL query cache
+    caches identical queries
+
+memcache
+    stores anything in RAM
+
+### Master/Slave
+
+any query on master
+    copied down to slaves
+
+    identical
+
+back ups, redundancy
+
+good for read heavy
+
+common paradigm to have master-master
 
