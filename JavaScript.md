@@ -804,3 +804,59 @@ anything not falsy is truthy
 
 `*`, `/`, `-` exclusively for numberic operations
     forces strings to be coerced into a number
+
+# Prototypal Inheritance
+
+classical inheritance:
+    objs inherit from classes
+
+    like blueprint or desc of the obj to be created
+
+    via constructor functions using new keyword
+
+    downsides:
+        inflexible hierarchy
+
+        tight coupling problems
+
+        fragile base class problems
+
+        duplication problems
+
+        gorilla/banana problem
+
+protypal inheritance
+    inherit directly from other objs
+
+    `Object.create()`
+
+Prototype delegation
+    an obj used as a model for another obj
+
+    new obj gets a ref to the prototype and its properties
+        `Object.create()`
+
+Concatenative inheritance
+    inheriting properties from one obj to another by copying the obj's prototype properties
+
+    without retaining the ref between them
+        `Object.assign()`
+
+Functional inheritance
+    uses factory function
+        function not a class or constructor that returns an object without using the new keyword
+
+    create obj then adds new props directly to the created obj
+
+    allows data encapsulation via closure
+
+## Favor Composition over class inheritance
+
+class inheritance ought to be avoided
+
+design your type regarding what they are
+    makes strict pattern
+
+composition design types regarding what they do
+    more flexible and reusable
+

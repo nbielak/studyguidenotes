@@ -522,3 +522,45 @@ Rotations
 insert n items - O(nlogn)
 
 in-order traversal - O(n)
+
+# Hash Tables
+
+combine array and linked list
+    random access
+
+data should tell where it should go
+
+bad at ordering or sorting
+
+use only the data using hashed
+    and all the data being ha=shed
+
+deterministic
+    reliable
+
+uniformly distribute data
+
+generate very different hash codes for similar data
+
+## Collision
+
+when two pieces of data yield same hash code
+
+want to store both pieices of data 
+    shouldn't overwrite data that was there first
+
+## Linear Probing
+
+place in next consecutive element in the array
+    wrapping if necessary
+
+hopefully el is somewhere nearby
+
+clustering
+    once there's a miss, two adjacent cells will have data
+
+    more likely that cluster will grow
+
+## Chaining
+
+el in array head of linked list

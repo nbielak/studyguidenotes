@@ -545,6 +545,9 @@ Multipoint/broadcast
         common way
 
 ### Ethernet format
+
+    MAC address is unique address
+
     preamble/SFD
 
     Destination address
@@ -580,3 +583,34 @@ Payload
 
 Frame Check sequence
 
+## IP Address
+
+Internet Protocol address
+
+send info between networks
+
+building table of addresses is routing
+
+using table to forward packets is forwarding
+
+use 32 bit address
+    use prefixes to send right direction
+
+    takes longest matching prefix
+
+ARP
+    address resolution protocol
+
+    sends message to network to check IP addresses 
+
+## TCP
+
+provides byte stream service
+
+reliable
+connection oriented
+    host has to connect to other
+
+either side can send stream of bytes
+
+encapsulated in IP packet
