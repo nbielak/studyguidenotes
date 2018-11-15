@@ -860,3 +860,42 @@ design your type regarding what they are
 composition design types regarding what they do
     more flexible and reusable
 
+# Global Object
+
+provides all global variables and functions
+
+multiple in browser scripts would use that obj and share variables through it
+
+`window` in browser
+    in Node.js `global`
+
+provides access to built-in functions and values
+    defined by the specification and env
+
+    can call `alert` directly or as a method of `window`
+
+provides acces to global function declarations and var variables
+    does not have variables declared with `let/const`
+
+## Uses of Window
+
+in-browser, `window` sometimes used
+    incredibly rare server side like in node
+
+useful to access global var if func has local one with same name
+
+check if certain global variable or built-in exists
+
+take variable from the right window
+    browser may open multiple windows and tabs
+
+    allows windows that come from the same site to access variables from one another
+
+## This and Global Object
+
+`this` occasionally global obj
+
+in browser, `this` === window
+
+when function with `this` is called in non-strict mode, it gets the global object as this
+
