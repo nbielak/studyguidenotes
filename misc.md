@@ -456,4 +456,127 @@ easiest to start with the FROM
 first inner query is run
     then outer query runs with the results of the inner query
 
-## Subqueries in Conditional Logic
+# Networking
+
+vary voltage to send information in cables
+
+symbols
+    5v = 1
+    0v = 0
+
+BOD
+    symbols per second
+
+ASCII to map numbers to text
+
+Fiber Optics
+    2 strands
+
+    have glass cladding
+
+
+Wireless
+    fluctuate waves
+
+clock rate very important
+    transition rate
+
+    clock slips if not synced up
+
+    can be synced by GPS antennae
+        by atomic clock in computer
+
+        send seperate signal with clock
+            might be slightly slower
+
+            could get out of phase
+    
+        can combine clock and data
+            0 -> 5 = 1
+            5 -> 0 = 0
+
+            manchester coding
+            
+            don't need perfectly synced clocks
+
+## HDLC
+
+High Level Data-Link Control
+
+uses frame delimiter or flag
+    01111110 - starts frame
+
+    every 8 bits makes up byte
+
+    put 0 after five consecutive 1s
+        not to confuse with flags
+
+        ignores 0
+
+        bit stuffing
+
+## Ethernet
+
+uses silence to show no frame
+
+then sends preamble
+
+56 bits of alternating 1s and 0s
+    gives opportunity for receiver to sync clock
+
+start of frame delimiter ends in '11'
+    receiver knows the next bit is first bit of data
+
+then reads data
+
+frame size varies from 64-1500 bytes
+
+## Frame Formats
+
+point to point links not common
+    service providers usually
+
+    one computer on each end of link
+
+Multipoint/broadcast
+    share data link and communicate with each other
+
+    ethernet switch
+        common way
+
+### Ethernet format
+    preamble/SFD
+
+    Destination address
+        unique
+        6 byte
+    Source Address
+        6 byt
+
+    Ether Type
+        2 bytes
+
+        payload type
+
+    Payload
+        46-150 bytes long
+        
+    last 4 bytes frame check sequence
+        used to detect corrupted data
+
+### PPP format
+
+common in point to point
+
+Flag and beginning and end
+
+Address and Control
+    each one byte long
+
+Protocol
+    same as ether type
+
+Payload
+
+Frame Check sequence
+
