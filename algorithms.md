@@ -564,3 +564,39 @@ clustering
 ## Chaining
 
 el in array head of linked list
+
+# Linked Lists
+
+data structure consisting of a collection of nodes that represent a sequence
+
+contain a datum and ref to the next el in the list
+
+In Ruby, best to use arrays for built in methods
+
+able to insert/remove els without reallocating or reorganizing data structure
+
+performing operations requiring access to particular els of LL can be cumberome
+    e.g. finding last el
+
+## LL Pros
+
+Dynamic
+    allocate the needed mem when the program is initialized
+
+    can expand in real time without mem overload
+
+Insertion and deletion easy
+
+easy to build linear data structres such as stacks or queues
+
+## LL Cons
+
+bc of value and point, more mem intensive
+
+have to access nodes sequentially
+
+not stored continuously so takes longe to access el
+
+terrible to reverse traverse single linked list
+
+doubly linked lists with two pointers more memory intensive
