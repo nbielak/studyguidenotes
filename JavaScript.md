@@ -899,3 +899,82 @@ in browser, `this` === window
 
 when function with `this` is called in non-strict mode, it gets the global object as this
 
+# Promise
+
+producing code 
+    does something that takes time
+
+consuming code
+    wants result of producing code
+
+promise
+    JS object that links producing code and consuming code
+
+has many internal properties
+    state
+        initially pending
+
+        changes to fulfilled or rejected
+
+    result 
+        arbitrary value of your choice
+
+        initially undefined
+
+calls function that it takes as args
+    resolve(value)
+        job finished successfully
+
+        sets state to fulfilled
+
+        sets result to value
+
+    reject(error)
+        indicate that error occured
+
+        sets state to rejected
+
+        sets result to error
+
+executor should do a job then call resolve or reject to change the state of the corresponding Promise object
+
+can only be a single result or error
+    further calls of resolve and reject ignored
+
+    resolve/reject expect one arg
+
+## Consumers: 'then' and 'catch'
+
+consumers registered through 'then
+ and 'catch'
+
+syntax of then:
+
+```js
+promise.then(
+    function(result) { /* handle a successful result */ },
+    function(error) { /* handle an error */ }
+);
+```
+first arg is func that
+    runs when promise resolved
+
+    receives result
+
+second arg
+    runs when Prom rejected
+
+    recevies the error
+
+if only interested in errors
+    use catch
+
+    analog of `.then(null, f)`
+
+on settled promises, then runs immediately
+
+always async
+
+
+
+

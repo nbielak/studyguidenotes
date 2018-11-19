@@ -600,3 +600,13 @@ not stored continuously so takes longe to access el
 terrible to reverse traverse single linked list
 
 doubly linked lists with two pointers more memory intensive
+
+
+# Binary Search
+
+given sorted array, find a given el in array
+
+split in half
+    left if smaller
+
+    right if bigger

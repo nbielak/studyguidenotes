@@ -380,6 +380,30 @@ state mutations need to be described as pure function
     takes prev state and action
     returns next state
 
+## Store Methods
+
+holds state obj
+
+dispatch actions
+
+specify reducer to update state
+
+getState
+    returns current state
+
+dispatch
+    dispatch actions to change state
+
+subscribe
+    register callback any time action is dispatched
+
+    can update UI to match current app state
+
+
+
+
+
+
 # SQL Query Order
 
 1. FROM and JOIN
