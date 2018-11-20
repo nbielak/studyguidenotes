@@ -638,3 +638,132 @@ connection oriented
 either side can send stream of bytes
 
 encapsulated in IP packet
+
+# Website Enhancements
+
+improving site speed improves performance
+
+google takes speed into consideration when ranking sites
+
+mobile first index now
+
+3 second load time ideal
+
+## Minimize HTTP requests
+
+80% of load time is spent downloading parts of page
+    images, stylesheets, scripts
+
+## Minify and combine files
+
+JS, CSS, and HTML files
+
+minifying
+    removing unnecessary formatting, whitespace, and code
+
+combine all CSS and JS into one file
+
+## Asynch loading for CSS and JS
+
+when browser loads a page moves top to bottom
+
+## Defer JS loading
+
+prevent from loading until after other els
+
+## Minimize Time to First Byte
+
+TTFB
+    amount of time a browser has to wait before getting first byte of data
+
+    server side concern
+
+influenced by internet connection
+
+## Reduce Server Response Time
+
+amount of time DNS lookup takes
+
+switch to faster DNS provider
+
+## Choose Right Hosting Option
+
+upgrade when getting more traffic
+
+Shared hosting 
+    cheapest
+
+    CPU, diskspace, RAM with other sites on same servrer
+
+VPS hosting
+    share server, but have own dedicated portions of the server
+
+Dedicated hosting
+    much more space, but more configuration and technical set up
+
+    most expensive
+
+## Run a Compression Audit
+
+smaller files load faster
+
+## Enable Compression
+
+gzip
+    file format and app that locates strings of similar code in files then temporarily replaces them to make the files smaller
+
+works well with CSS and HTML
+
+## Enable Browser Caching
+
+can load info without having to send HTTP request
+
+## Reduce Image Size
+
+jpg
+    lossy
+
+png
+    lossless
+
+## Use a CDN
+
+networks of servers to decrease load times
+
+cache site on a global network of servers
+
+## External Hosting Platforms
+
+for larger files, like videos
+
+host video on youtube and embed on site
+
+## Optimize CSS Delivery
+
+one external style sheet
+
+## Prioritize Above-the-fold content
+
+top of the page load faster
+
+lazy loading
+
+user doesn't need to wait to access page
+
+## Reduce Number of Plugins
+
+not heavy weight, but too many can slow down site
+
+## Reduce Redirects
+
+necessary when move or delete page or broken links
+
+cna create additional HTTP reqs
+
+## Reduce External Scripts
+
+third party integrations
+
+## Monitor Speed Over Time
+
+## Moniter Mobile Page Speed
