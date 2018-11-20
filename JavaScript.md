@@ -975,6 +975,37 @@ on settled promises, then runs immediately
 
 always async
 
+## Promise Chaining
+
+`promise.then` returns a promise so can call then on it
+
+normally value returned by .then immediately passed to next handler
+
+exception:
+    if returned value === promise
+        further execution is suspended until it settles
+
+allows for chaining of async actions
+
+grow down not in a pyramid shape
+
+Thenables
+    .then may return a thenable obj and will be treated same as promise
+
+fetch gets info from remote server
+    returns promise
+
+    resolves with a response obj when remote server respons with headers, but before the full resonse is downloaded
+
+    top read res call response.text() or response.json()
+
+### Error Handling
+
+use .catch to handle errors
+
+when promise rejects, control jumps to the closest rejection handler down the chain
+
+promise has invisible try..catch around it
 
 
 

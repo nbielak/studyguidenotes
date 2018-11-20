@@ -1652,3 +1652,22 @@ good for read heavy
 
 common paradigm to have master-master
 
+# Security
+
+SQL injection attacks
+
+FTP
+    file transfer protocol
+
+    bad practice because unencrypted
+
+Telnet
+    control one computer from another
+
+    have to use SSH
+
+HTTP    
+    send session token as cookie
+
+    no encryption
+
