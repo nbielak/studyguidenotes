@@ -610,3 +610,26 @@ split in half
     left if smaller
 
     right if bigger
+
+
+# Interpolation Search
+
+given a sorted array of n uniformly distributed values in an array
+
+improvement over binary search
+
+bserach always goes to the middle
+
+interpolation goes to different locations according to the value of key being searched
+    if val of key is closer to last el
+        likely to start toward end side
+
+1. Calculate the val of pos using probe pos formula
+
+2. if it is a match return idx of the item
+
+3. if less, calc the probe pos of the left sub array. otherwise calc the same in the right sub array
+
+4. repeat until a match is found or sub array reduces to zero
+
+O(log log n) -> O(n)

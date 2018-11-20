@@ -1007,5 +1007,43 @@ when promise rejects, control jumps to the closest rejection handler down the ch
 
 promise has invisible try..catch around it
 
+## Promise API
+
+### Promise.resolve
+
+returns a resolved promise with the given value
+
+used when we already have a value
+    but would like to have it wrappd in a promise
+
+### Promise.reject
+
+creates a rejected promise with an error
+
+### Promise.all
+
+run many promises in parallel and wait till all of them finish
+
+takes an iterable obj with promises
+    usually an array
+
+returns a new promise
+    resolves when all of them are settle and has an array of their results
+
+relative order is the same, no matter how long each take
+
+common trick:
+    map an array of job data into an array of promises and then wrap that into Promise.all
+
+rejection error becomes out come of the whole Promise.all
+
+no way to cancel or abort execution
+    other promises continue to execute, but ultimately ignored
+
+### Promise.race
+
+takes an iterable of promises
+    waits for the first res or error and goes on that
+
 
 
