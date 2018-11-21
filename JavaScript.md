@@ -1077,4 +1077,22 @@ if rejected, throws error
 `try..catch` tends to be more convenient
 
 `async/await` works well with `Promise.all`
-    
+
+# Currying and Partials
+
+not only can we `bind` thids, but also args
+
+partial function application
+    creating a new function by fixing some params of the existing one
+
+    no this? use `null`
+
+    independent function with readable name
+
+    have generic func and want a less universal variant for convenience
+
+## Currying
+
+translating a function from callable `f(a, b, c)` to 'f(a)(b)(c)'
+
+can keep funtion callable normally and get partials easily

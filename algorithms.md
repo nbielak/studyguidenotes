@@ -633,3 +633,33 @@ interpolation goes to different locations according to the value of key being se
 4. repeat until a match is found or sub array reduces to zero
 
 O(log log n) -> O(n)
+
+# Quick Sort
+
+Divide and conquer algorithm
+
+picks an el as pivot and partitions the given array around the pivot
+
+various pivot positions:
+    first el
+
+    last el
+
+    random el
+
+    median
+
+# Detect Cycle In Graph
+
+disjoint-set data structure
+    keeps track of a set  of els partitioned into a number of non-overlapping subsets
+
+union algorithm
+    performs two useful operations on such a data structure
+        find: determine which subset a particular element is in
+            used to determine if two els are in the same subset
+
+        Union: join two subsets into a single subset
+
+Union-Fine Algorithm can be used to check whether an undirected graph contains a cycle or not
+

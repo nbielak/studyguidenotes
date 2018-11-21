@@ -1694,3 +1694,39 @@ SSL
 Same Origin Policy
     can make AJAX reqs to other servers, but cannot put their response into DOM
 
+# System Design
+
+ask good questions to get MVP
+    how should it scal
+
+Don't use buzzwords
+
+Clear and organized thinking
+    define APIs, etc
+
+Drive Discussions
+    80% you
+
+## Basic Features
+
+figure out features
+
+design API
+    who and when call APIs
+
+Availability
+    if host goes down, will service be available
+
+Latency
+
+Scalability
+
+Durability
+    not always important for interviews
+
+Class Diagrams
+
+Security and Privacy
+
+Cost Effective
+
