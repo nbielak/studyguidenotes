@@ -884,3 +884,255 @@ links are similar, but include `Element` inside
     `previousElementSibling`, `nextElementSibling`
 
     `parentElement`
+
+## DOM Nodes
+
+### DOM Node Classes
+
+diff properties depending on their class
+    `<a>` has link-related properties
+
+    text nodes not el nodes
+
+common properties and methods between all of them
+
+EventTarget
+    root of hierarchy
+        root abstract class
+    Objects that are classes are never created
+
+    serves as a base
+        so that all DOM nodes support 'events'
+
+Node
+    also an abstract class
+        serves as base of DOM nodes
+
+    core tree functionality
+        parentNode
+        siblingNode
+        childNodes
+
+    objects of Node class never created
+
+    Text, Comment, and Element inherit from it
+
+Element
+    base class for DOM els
+
+    provides element level navigation
+        nextElementSibling
+        children
+        getElementsByTagName
+        querySelector
+
+        serves as base for:
+            SVGElement
+            XMLElement
+            HTMLElement
+
+HTMLElement
+    basic class for all HTML els
+
+    inherited by various HTML elements
+
+    HTMLInputElement
+        class for `<input>` els
+    HTMLBodyElement
+        class for `<body>`
+    HTMLAnchorElement
+        class for `<a>` 
+    etc...
+
+full set of props and methods of a given node comes as the result of inheritance
+
+regular JS objects
+    proptype-based classes for inheritance
+
+`console.dir(el)` for outputting in browser
+    `console.log` shows element dom tree
+
+    `console.dir` shows the element as a DOM object
+
+### `nodeType` Property
+
+old-fashioned way to get the type of a DOM node
+
+read only
+
+numeric value
+    elem.nodeType == 1 for element nodes
+
+    elem.nodeType == 3 for text nodes
+
+    elem.nodeType == 9 for the document object
+
+use `instanceof` in modern scripts
+
+### Tag: nodeName and tagName
+
+props of DOM Node
+
+`tagName` only exists for element nodes
+
+`nodeName` is defined for any node
+    for elements, it means the same as `tagName`
+
+    for other node types it has a string with the node type
+
+tagName only supported by element nodes
+
+tag name always upper case except XHTML
+
+### innerHTML
+
+get HTML inside the element as a string
+
+can modify it as well
+
+if inserting `<script>` tag, doesn't execute
+
+    becomes a part of HTML, just as a script that has already run
+
+`innerHTML+=` does a full overwrite
+
+content zeroed out and rewritten
+    all images and other resources will be reloaded
+
+### outerHTML
+
+contains the full HTML of the el
+    innerHTML + the el
+
+writing to outerHTML does not change the el
+    replaces it as a whole in ther outer context
+
+doesn't change the el we are writitng to
+    create the new content on its place instead
+
+### nodeValue/data
+
+innerHTML prop only valid of element nodes
+
+other node types have `nodeValue` and `data` properties
+
+    essentially the same
+
+### textContent
+textContent provides
+access to the text inside the element
+
+writitng to `textContent` more useful
+    can write text the safe way
+
+    with `innerHTML` inserted as HTML with all HTML tags
+
+    with `textContent` inserted as text and all symbols are treated literally
+
+### The 'hidden' Property
+
+specifies if el is visible
+
+technically works the same as `style="display:none`
+
+### More Properties
+
+many additional properties
+
+`value`
+
+`href`
+
+`id`
+
+# OOP
+
+privileging data over action 
+
+procedural programming is function oriented
+
+data points types first
+    then functions we need
+
+JS strange because prototypal inheritance
+
+## Class
+
+definition of data type
+
+field
+    data
+
+method
+    functions for class
+
+    how to act upon data
+
+## Encapsulation
+
+fields of instance should only be read or written by methods of instances of that class
+
+without this, data can get passed in anywhere in code
+    creates spaghetti code
+
+public vs. private
+
+    public methods can be accessed outside of class
+
+    private methods can only be accessed inside class
+        visible only to methods of own type
+
+        all fields ought to be private
+
+## Inheritance
+
+types may overlap
+
+subtype/supertype
+    descendant/ancestor
+
+    parent/child
+
+good for modelling real world objects
+
+is-a vs has-a relationship
+    cat is a mammal
+        inheritance
+    car has a steering wheel
+        composition
+
+multiple inheritance
+
+circular inheritance never allowed
+
+overriding
+    method in descendant
+
+class member
+    no instance passed to it
+
+    belong to class not instance
+
+Constructors
+
+    set up an instance at its creation
+
+Interface
+
+    two classes share methods
+
+Abstract class
+
+    a class that doesn't mean to be instantiated
+
+    used for inheritance
+
+### Prototypical Inheritance
+
+OOP without classes
+    producing child instances from parent instances
+
+
+
+
+    
