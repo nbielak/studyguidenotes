@@ -768,3 +768,119 @@ third party integrations
 
 ## Moniter Mobile Page Speed
 
+# DOM Tree
+
+every HTML tag is an object
+
+nested tags are called children of the enclosing one
+
+text inside is obj as well
+
+tags are called element nodes
+
+text nodes contain only a string
+    may not have children, only leaf
+
+spaces and newlines are special characters
+    form text nodes and become part of the DOM
+
+spaces and newlonies before head are ignored
+
+anything after closing body tag moved inside the body
+
+## AutoCorrection
+
+if browser encounters malformed HTML 
+    corrects when making the DOM
+
+tables must have `<tbody>`
+
+## Other Node Types
+
+if something is in HTML, it also must be in the DOM tree
+
+document obj that represents the whole doc is a DOM node as well
+
+12 types of node, but usually work with 4
+    document: the entry point
+
+    element nodes: HTML-tags, the tree building blocks
+
+    text nodes: contain text
+
+    comments: won't be shown, but JS can read it from the DOM
+
+## DOM Traversal
+
+start with document object
+    from it we can access any node
+
+### documentElement and body
+
+topmost tree nodes are available as document properties
+    `<html>` = `document.documentElement`
+
+    `<body>` = `document.body`
+        can be null
+
+        null means doesn't exist
+
+    `<head>` = `document.head`
+
+### Children
+
+child nodes or children
+    elements that are direct children
+        nested exactly in given one
+
+descendants
+    all elements that are nested in the given one including children and their children, etc.
+
+childNodes collection provides access to all child nodes including text nodes
+
+firstChild and lastChild give access to the first and last children
+
+### DOM Collections
+
+childNodes looks like an array, but is a collection
+    special array-like iterable obj
+
+can use `for..of` to iterate
+    don't use for..in
+
+    will go over all enumerable properties
+
+Array methods won't work because not an array
+    can use Array.from
+
+DOM collections read only
+
+DOM collections live
+
+### Siblings and the parent
+
+siblings
+    nodes taht are children of the same parent
+
+parent is available as `parentNode`
+
+next sibling is `nextSibling`, same with previous
+
+
+### Element-only Navigation
+
+previous navigation properties reger to all nodes
+    `childNodes` allows us to see both textnodes, el noses, and comment nodes
+
+    many tasks we don't want text or comment nodes
+
+    want to manipulate el nodes that represent tags and form the structure of the page
+
+links are similar, but include `Element` inside
+    `children`- only those children that are element nodes
+
+    `firstElementChild`, `lastElementChild`
+
+    `previousElementSibling`, `nextElementSibling`
+
+    `parentElement`
