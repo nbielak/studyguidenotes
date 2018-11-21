@@ -1671,3 +1671,26 @@ HTTP
 
     no encryption
 
+session cookie with no expiration date
+    only lives for life of browser
+
+Session Hijacking
+    getting cookies and pretending to be someone else
+
+    can get by poking around browser
+
+    software that can get on network and get non encrypted data
+        using HTTPS fixes this
+
+        encrypts cookies
+
+    XSS
+
+SSL
+    buy certificate
+
+    public/private key crypto
+
+Same Origin Policy
+    can make AJAX reqs to other servers, but cannot put their response into DOM
+

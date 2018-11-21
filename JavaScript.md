@@ -1046,4 +1046,35 @@ takes an iterable of promises
     waits for the first res or error and goes on that
 
 
+# Async/Await
 
+## Async functions
+
+`async` keyword placed before functions
+    function always returns a promise
+
+    wraps non promises into that promise
+
+## Await
+
+only works in `async` functions
+
+`let value = await promise;`
+
+makes JS wait until that promise settles and returns result
+
+won't work in top-level code
+    need to have a wrapping async function for the code that awaits
+
+accepts thenables
+
+class method can also be async
+
+## Error Handling
+
+if rejected, throws error
+
+`try..catch` tends to be more convenient
+
+`async/await` works well with `Promise.all`
+    
