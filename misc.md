@@ -1132,7 +1132,101 @@ Abstract class
 OOP without classes
     producing child instances from parent instances
 
+# Rails Service
+
+service layer lies between controllers and models
+
+## What is a Service
+
+In Domain Driven Design, service is an operation offered as an interface that stands alone in the model
+    an action, not a thing
+
+encapsulate in separate, stateless service
+
+try to break large, domain objects doing too much work into services
+
+## Types of Services
+
+Application, Domain, Infrastructure
+
+### Application Services
+
+a service that provides non-infrastructure related operations
+    don't come up when discussing the domain model outside the context of software
+
+exporting account transactions as a CSV file 
+    file format has no meaning in the domain of banking
+
+improve cohesiveness of domain model
+    prevent "software: implementation details from leakinginto it
+
+### Domain Services
+
+scripts a use-case involving multiple domain objects
+
+use cases often involve rules outside the responsibility of any single obj
 
 
+funds trnasfer would be an example of domain service
+    doesn't quite fit in either account obj or customer
 
-    
+alternative approach:
+    instance method on Account
+
+CRUD are not domain services
+
+### Infrastructure Services
+
+encapsulate access to an external system
+
+often used by application and domain services
+
+emailing and message queuing
+
+## What is a Service Layer?
+
+application's boundary and set of available operations from the perspective of interfacing client layers
+    applications's API
+
+## Supporting Multiple Clients
+
+most web app's API consists of simple CRUD cases
+
+encapsulation of API allows to be used across client controllers
+    thinner, more cohesive
+
+less of benefit with rise of HTTP-based JSON APIs
+
+## Encapsulating Application Logic
+
+domain logic purely the problem domain
+
+application logic technical responsibilities
+    coordinating a workflow
+
+for a more cohesive and reusable domain model, app logic should be handled by infrastructure services
+
+app logic in domain model used by clients may have unwanted side effects
+
+## Applying Cross-Cutting Concerns
+
+Java web apps commonly use services to apply cross-cutting concerns
+    transaction management and security
+
+    in Spring, can write to database, send email, and enqueue message atomically
+
+in Rails, `ActiveRecord` provides automatic transaction managemnt
+
+## When To Use Service Layer
+
+only reason is if have to support multiple clients using different protocols
+
+HTTP and JSON de facto client communication protocol and format
+    eliminate need for a service layer
+
+only for client that doesn't speak HTTP
+
+only build for today
+
+## Keeping Controllers DRY
+

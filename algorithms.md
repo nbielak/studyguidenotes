@@ -663,3 +663,16 @@ union algorithm
 
 Union-Fine Algorithm can be used to check whether an undirected graph contains a cycle or not
 
+# Floyd Warshall
+
+for solving all pairs shortest path
+
+find shortes distanecs between every pair of vertices in a given edge weighted directed graph
+
+initialize the solution matrix as the same as the input graph matrix
+
+update the solution matrix by considering all vertices as an intermediate vertex
+
+one by one pick all vertices
+
+update all shortest paths which include the chosen vertices
