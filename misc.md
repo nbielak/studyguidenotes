@@ -1231,3 +1231,239 @@ only build for today
 # Flexbox
 
 horizontal form 
+
+# CSS Display
+
+every element on a web page is a rectangular box
+
+default value is inline but may resets set it to block
+
+## Inline
+
+`<span>`, `<em>`, `<b>`
+    wrapping these els in string doesn't break the flow of the text
+
+accept margin and padding but the el still sits inline
+    only pushes other els horizontally away, not vertically
+
+## Inline Block
+
+set inline with natural flow of text
+
+able to set width and height
+
+## Block
+
+container els usually
+    `<div>`, `<section>`
+
+    also text blocks
+
+do not sit inline but break past them
+
+by default, take up as much horizontal space as they can
+
+## Run-in
+
+doesn't work in firefox
+
+set header el to sit inline with the text below
+
+floating it won't work
+    don't want the header to be a child of the text el bellow it
+
+## Flexbox
+
+## Flow-Root
+
+new block formatting context
+
+like a block
+
+good for clearing floats
+
+## Grid
+
+## None
+
+removes el from the page
+
+still in the DOM, removed visually and other ways
+    can't tab to it or its children
+
+    ignored by screen readers
+
+# CSS Positioning
+
+for manipulating the locatino of an el
+
+## Values
+
+static
+    evey el has a static position by default
+        so that el will stick to normal page flow
+
+    left/right/top/bottom/z-index set, then no effect on that el
+
+relative
+    el's original position remains in the flow of the doc
+
+    left/right/top/bottom/z-index work
+        nudge the el from the original position
+
+absolute
+    removed from the flow of the document and other els will behave as if its not even there
+
+    all positional props will work on it
+
+fixed
+    el is removed from the flwo of the doc
+        similar to absolute
+    
+    always relative tothe doc, not any particular parent and unaffected by scrolling
+
+sticky
+    like a relative value until the scroll location of the view port reaches certain threshold
+        element then takes a fixed position
+
+inherit
+    position value doesn't cascade, so this forces it to
+
+
+## Absolute
+
+if child has absolute value then parent will behave as it the child isn't there at all
+
+setting values like left, bottom, right -> child el responding to dimensions of doc not parent
+
+to make child el positioned absolutely from its parent
+    set parent position to relative
+
+## Fixed
+
+can help position el anywhere relative to the document, unaffected by scrolling
+
+
+## Sticky
+
+compromise bewteen the relative and fixed values
+
+experimental and only partially adopted by select browsers
+
+position an el relative to anything on the doc
+
+once user scolls past certain point in the viewport
+    fix the position of the el to that location
+
+    seems persistently displayed like an element with a fixed value
+
+# CSS Floats
+
+CSS positioning property
+
+like in print layout where text flows around objects
+
+remain a part of the flow of the web page
+    different that absolute positioning, which are removed
+
+    will affectthe position of other els and other els, them
+
+left, right, none, inherit
+
+## Uses
+
+can be used to create entire web layouts
+
+can also be good for layouts in smaller instances
+
+## Clearing the Float
+
+float's sister prop == `clear`
+
+an el w/ clear prop will not move up adjacted to the float
+
+move itself down past the float
+
+clear has four values
+    both
+        clears float from either direction
+
+    left/right
+        clears float from one direction respectively
+
+    None
+        default
+
+## The Great Collapse
+
+if parent el contained nothing but floats, the height of it collapses to nothing
+
+fixe by clearing the float after the floated els in the container but before the close of the container
+
+## Clearing Floats
+
+if succeeding el consistent
+    `clear: both`
+
+Empty Div Method
+    `<div style="clear: both;"></div>`
+        div used bc no browser default styling
+
+        no special function
+
+        unlikely to be generically styled with CSS
+
+    has no contextual meaning at all to the page and is purely for presentation
+        scorned by semantic purists
+
+Overflow Method
+    setting the overflow CSS prop on a parent el
+
+    if this prop set to auto or hidden on parent
+        parent will expand to contain the floats
+
+        clearing it for succeeding els
+
+    if adding div just to apply this, same semantically as empty div method and less adaptable
+
+    overflow property not specifically for clearing floats
+
+Easy Clearing Method
+    clever CSS pseudo selector `:after` to clear floats
+
+    doesn't set overflow to parent
+
+    apply additional calss like clear fix to it
+
+    small bit of content hidden from view after parent el
+
+## Problems with Floats
+
+fragile 
+    from IE 6 and slew of flat-related bugs
+
+pushdown
+    el inside a flowated item being wider than the float itself
+
+    most browsers render the image outside the float
+        stop sticking out part from affecting the layout
+
+    IE expands float to contain image, affecting layout
+
+    quick fix: check that images don't do this, `overflow: hidden`
+
+Double Margin
+    if margin applied in the same direction as the float, it will double the margin
+
+    quick fix: `display: inline` on the float
+
+3px Jog
+    text set up next to a float is kicked away by 3px
+
+    set a width or height on the affected text
+
+Bottom Margin Bug
+    if floated parent has floated children, bottom margin on those children is ignored by the parent
+
+    use bottom padding on the parent instead
+

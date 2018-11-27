@@ -1730,3 +1730,90 @@ Security and Privacy
 
 Cost Effective
 
+# TinyURL
+
+map not scalable 
+
+3 layers:
+    API
+    Application Layer
+    Persistence Layer
+
+API
+    createTiny(longUrl)
+
+    getLong(shortUrl)
+
+looking for 
+    generating unique URL
+
+    persistence layer
+
+a-z
+A-Z
+0-9
+    62^7 combinations
+
+## Database
+
+key tinyurl
+
+value long url
+
+## Techniques
+
+### Generate Random
+1. Generate tiny url and check DB
+    `get` into db then put if not there
+
+    doesn't always work
+        if second req comes in at the same time, one will win
+
+2. put if absent into db
+    good for relational dbs good
+
+    noSQL may not support
+        scale well
+
+    if there is db support works well
+
+3. put into db
+    get req and checks to see if val === longUrl
+        if not generates new tinyURL and repeats process
+
+    at least one get
+
+### MD5 approach
+
+calc md5 of long url then use first 43 bits to use to make new url
+
+    md5 hashing function generates 128 long hash
+
+probability of collision, but low
+
+combining this and then use DB check method
+
+take binary bits and convert into base 10 then convert to base 62
+    map those numbers to characters
+
+### Counter
+
+1. single host responsible for keeping counter
+    passed to servers
+
+    single point of failure
+
+2. Each host maintains counter
+    higher chance of collision
+
+3. Range based approach
+    break numbers into ranges
+
+    each worker working with an a range
+
+    need a service like zookeeper
+
+    potential threat bc sequential
+        take unique number then add bits then make url
+
+    
