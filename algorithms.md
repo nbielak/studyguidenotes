@@ -720,3 +720,21 @@ use key values to pick the minimum weight edge from cut
     only used for vertices not included in MST
 
     key value for these vertices indicate the minimum weight edges connecting them
+
+# Kruskal MST Algorithm
+
+MST has v - 1 edges
+    v = # of vertices in graph
+
+Steps
+    sort all edges in non-decreasing order of their weighty
+
+    pick smallest edge
+        if forms a cycle with the spanning tree
+            discard
+        else
+            include the edge
+    
+    repeat until there are v-1 edges in the spanning tree
+
+step 2 uses union find alg

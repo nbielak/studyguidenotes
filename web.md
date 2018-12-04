@@ -1816,4 +1816,33 @@ take binary bits and convert into base 10 then convert to base 62
     potential threat bc sequential
         take unique number then add bits then make url
 
-    
+# Autocomplete
+
+## Request Flow
+
+API: prefix -> list of autocomplete for prefix
+
+build tree, store top terms 
+
+# Messenger Service
+
+facebook messenger
+    keeps data in service forever, until deleted
+
+whatsapp
+    delete message until other party gets message
+
+    end to end encryption
+        services in between cannot read messages
+
+websocket
+   getting around fact that server can't make http req
+
+   allows server and client to make req
+
+   sticky session
+        always ends up in same server
+
+redis used as distributed cache
+    store websocket info, heartbeat
+
