@@ -676,3 +676,47 @@ update the solution matrix by considering all vertices as an intermediate vertex
 one by one pick all vertices
 
 update all shortest paths which include the chosen vertices
+
+# Prim's Minimum Spanning Tree
+
+starts with an empty spanning tree
+
+maintain two sets of vertices
+
+    first set contains vertices already inclued in MST
+
+    second set contains vertices not yet included
+
+considers all the edges that connect the two sets and picks the minimum weight edge from the edges
+
+after picket the edge, moves end point of the edge to the set containing MST
+
+a group of edges connecting two sets of vertices in a graph
+    cut in graph theory
+
+    in every step of Prim's alg, we find a cut
+
+    pick the min weight edge from the cut and include in MST set
+
+a spanning tree means all vertices must be connected
+    two disjoin subsets of vertices must be connected to make a Spanning Tree
+
+## Algorithm
+
+create a set mstSet tracking the seen vertices
+
+assign a key value to all vertices in the input graph
+    
+while mstSet doesn't include all vertices
+    pick a vertex u which in not in mstSet and has min key value
+
+    include u in mstSet
+
+    update key alue of all adjacent vertices u
+        to update, iterate through all adjacent vertices
+            for every vertex v, if weight of edge u-v is less than the pervious key value of v, update the key value as weight of u-v
+
+use key values to pick the minimum weight edge from cut
+    only used for vertices not included in MST
+
+    key value for these vertices indicate the minimum weight edges connecting them
