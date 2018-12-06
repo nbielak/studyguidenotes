@@ -836,3 +836,69 @@ Union
     traverse list 2 and insert, unless already present
 
 ### Merge Sort Method
+
+sort first list using merge sort
+
+sort second list using merge sort
+
+linearly scan oth lists to get union and intersection
+
+### Hashing
+
+Union
+    result list as NULL and empty hash table
+
+    traverse both lists and look for el in hash table
+
+    if el isn't present, insert the el to result
+
+Intersection
+    result list as NULL and empty hash table
+
+    traverse list one and insert
+
+    traverse list2 and check for el
+        if el is present insert, else ignore
+
+## Reverse LL
+
+reverse every k nodes
+    I: 1-2-3-4-5-6-7-8-NULL
+    O: 3-2-1-6-5-4-8-7-NULL
+
+reverse the first sub list of size k
+    while reversing keep track of the next node and prev node
+
+head -> next = reverse(next, k)
+    recursively call for the rest of the list and link the two sub lists
+
+return prev
+    prev becomes the new head of the list
+
+## Detect and Remove a Cycle in a LL
+
+checks if LL has loop and if so, removes it and returns true
+    else false
+
+Detecting loop
+    traverse list and use hash table
+
+    Floyd's Cycle detection: traverse list using two pointers
+        first moves by one
+        second moves by two
+
+        if pointers meet, loop, else no loop
+
+Removing loop
+    find last node and `next = null`
+
+    
+
+
+
+
+
+
+
+
+

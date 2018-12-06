@@ -1944,7 +1944,117 @@ hash look up for redis
 search
     when tweet made, fan out but also indexes tweet
 
+# Designing a Parking Lot
 
-    
+interviewer wants to see you can handle breadth
+    ambiguity
+
+systematic approach
+    show clear way to approach problem
+
+    clarify assumptions, ask questions
+
+Question examples
+    How is it designed? Building? Open space?
+
+    How many spots?
+
+    Multiple levels? Dependancies? Optimization?
+
+    How many enterances?
+
+    Price? Premium? Disability spots?
+
+Not just how you code, but how you think about it
+
+example: 
+    4 sizes of parking spots
+        s, m, l, xl
+
+    smaller car can go in larger spots
+
+Class hierarchy:
+    Parking Lot
+
+    Vehicles
+
+    Spots
+
+Vehicles
+    abstract class, Vehicle
+        - License Plate: string
+        - Color: enum
+
+    Motorcycle, Car, Truck, Bus inherit Vehicle
+
+Parking Lot
+    - Zip Code: num
+    placeVehicle(vehicle) => Spot
+
+Spot
+    - ID: num
+    - size: enum
+
+In reality, makes sense to use DB backend
+
+## Coding Part
+
+methods for placing and retreiving vehicle
+
+store in right kind of data structure
+
+place will have to find first available spot that vehicle fits
+    stack of only available spots of a certain kind
+        linear time
+
+        4 stacks
+
+    put in hash map
+
+removeVehicle(vehicle) 
+    return spot of vehicle
+
+    fast look up => HashMap
+        key can be license plate
+
+## Messenging Service, pt 2
+
+features and derive architecture from features
+
+    one to one text
+
+    sent, delivered, and read confirmation
+
+    push notifications
+
+bottle neck is server in middle, solutions:
+    asynchronicity
+
+    ephemeral
+        info deleted when not needed
+
+    horizontal scaling
+
+as soon as message received, delete in server
+    use queue of messages
+
+if you don't connect to same server
+    messages can appear in wrong order
+
+Sent, Delivered, Read
+    ACK to sender -> one check
+
+    when server connects to recipient
+        opens new connection to sender to send check
+
+    read sends ACK with message ID to server
+        doesn't matter which server
+
+Push Notifications
+    ack that they are received
+
+client side backups
+
+
 
     
