@@ -1846,3 +1846,105 @@ websocket
 redis used as distributed cache
     store websocket info, heartbeat
 
+
+# Twitter Design
+
+Features:
+    Tweeting
+
+    Timeline
+        - User
+        - Home
+    
+    Following
+
+## Naive Solution
+
+relational db
+
+    user table
+
+    tweet table
+
+    following Table
+
+user tweets message and its one row in tweet table
+
+Home timeline
+    know who user is following and do large select statement over tweets table
+        merge in chronological order
+
+    impossible at some point
+
+## Characteristics
+
+read heavy
+    needs to be super fast
+
+care about speed, but availability is more important
+    eventual consistency
+
+## Optimized Solution
+
+Created tweets go to load balancer
+
+fans out
+    goes to in mem database
+        twitter uses Redis
+
+        3 machines
+
+        need to have huge amount of RAM
+
+    precompute hometime lines of everyone that follows you
+        only if active in certain time period
+
+What is in Redis Cluster
+    lists for users
+        tweet id
+
+        sender
+
+high number of followers
+    replicated to # of followers x3
+        takes a long time
+
+    followers will see others' reactions to tweet, but not actual tweet
+
+Mixed Approach
+
+    relational and optimized
+
+    merge tweets of users with high # of followers during load time
+
+## Tradeoffs
+
+a lot of space 
+
+space not a big problem bc character count
+
+## Accessing Timeline
+
+browser does get req to LB
+
+hits redis cluster
+    fastest one responds
+
+populates bob's timeline
+
+a lot of computation when tweeting, but super fast response for timeline
+
+## Hash Maps
+
+hash look up for redis
+    3 redis addresses
+
+## In depth topics
+
+search
+    when tweet made, fan out but also indexes tweet
+
+
+    
+
+    

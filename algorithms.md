@@ -738,3 +738,101 @@ Steps
     repeat until there are v-1 edges in the spanning tree
 
 step 2 uses union find alg
+
+# Linked List
+
+## Insert
+
+if list empty
+    make the node the head and return
+
+if value of the node is smaller than head
+    make it the head
+
+in a loop find the appropriate node placement
+    prev node is less, next node is more
+
+insert there
+
+## Delete Node
+
+delete in singly linked list
+
+accepts:
+    pointer to start node
+
+    node to be deleted
+
+should not return pointer to the head node
+
+should not accept pointer to pointer to head node
+
+LL never becomes empty
+
+modify head pointer when the node to be dleeted is first node
+
+## Compare Strings as LLs
+
+given two lls, func that returns 0 if both strings are same, 1 if first linked list is lexicographically greated, -1 if second string is greater
+
+## Sum of Two LLs
+
+given two #s represented by two linked lists
+
+func returns sum of lists
+    linked list representation of addition of two input numbers
+
+    do not modify lists
+
+    no extra space
+
+    use recursion
+
+calc sizes of two linked lists
+
+if sizes are the same
+    calculate sum using recursion
+
+    hold all nodes in recursion call stack til the right-most node
+
+    calc sum of the rightmost nodes and go to left
+
+if sizes not the same
+    calc difference in size
+
+    move diff nodes ahead in the bigger linked list
+
+    calc sum of smaller list and right sublist
+        store carry of sum
+
+    calc sum of the carry with the remaining left sub-list of larger list
+
+    nodes of this sum added to beginning of sum list
+
+## Merge LLs
+
+run a loop while there are available positions in forst loop 
+    insert nodes of second list by changing pointers
+
+## Union and Intersection of LLs
+
+given two LLs, create union and intersection lists
+    order doesn't matter
+
+### Naive Approach
+
+Intersection
+    init result list as NULL
+
+    traverse list1 and look for its each el in list2
+
+    if present, add to intersection list
+
+Union
+    init result list as NULL
+
+    traverse list 1 and insert els
+
+    traverse list 2 and insert, unless already present
+
+### Merge Sort Method
