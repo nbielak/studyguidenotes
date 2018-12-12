@@ -908,7 +908,27 @@ sort the two halves
 
 merge the sorted sublists
 
+# Longest Common Subsequence
 
+given two sequences, find the length of the longest subsequence present in both
+    same relative order, but not contiguous
+
+naive solution
+    generate all subsequences and find longest matching subsequence
+
+    exponential
+
+## Optimal Substructure
+
+input sequences = X[0..m-1], Y[0..n-1]
+
+if (x[m-1] == Y[n-1])
+    L(X[0..m-1], Y[0..n-1]) = 1 + L(X[0..m-2], Y[0..n-2])
+
+else
+    L(X[0..m-1], Y[0..n-1]) = MAX ( L(X[0..m-2], Y[0..n-1]), L(X[0..m-1], Y[0..n-2]) )
+
+# Longest Increasing Subsequence
 
 
 
