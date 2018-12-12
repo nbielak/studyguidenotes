@@ -892,7 +892,23 @@ Detecting loop
 Removing loop
     find last node and `next = null`
 
-    
+## Merge Sort for LLs
+
+bc of slow random access performane of LLs
+    quicksort slow and heapsort impossible
+
+merge sort preferred
+
+if head is null or only one el in LL 
+    return
+
+divide LL into two sublists
+
+sort the two halves
+
+merge the sorted sublists
+
+
 
 
 

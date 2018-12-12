@@ -2055,6 +2055,74 @@ Push Notifications
 
 client side backups
 
+# Designing Uber/Lyft
+
+Customer-Driver Matching
+
+Mapping
+
+Trip Storage
+    stored in close data center and backup DC
+
+    low latency calls to DC
+
+    Mix SQL/NoSQL
+        not much relation between trips
+
+    Data Warehouse for more expensive queries
+        Hadoop
+
+        business analytics
+
+Caching Layer
+    map or event data
+
+Logging
+    where a driver is
+
+    Kafka - ingests logging messages
+
+    periodically stores in hadoop
+
+Service Oriented Architecture (SOA)
+    many smaller services
+        internal or external
+
+        serve one purpose
+
+        decoupled
+
+Network Routing
+
+Resiliency Testing
+    Hailstorm - shuts down services
+
+Mapping is a Graph Problem
+    city is edges and nodes
+
+    NP-complete problem
+        Traveling Salesman Problem
+    
+    Precise ETAs
+        edge weights
+
+        Precompute graph of city
+
+        traffic in real time?
+            edge weights change all the time
+
+            use historical data
+                problem: expensive for storage, no historical data for new cities
+
+            splitting graph alg
+                break up cities into graphs
+
+    
+
+
+    
+
+     
 
 
     
