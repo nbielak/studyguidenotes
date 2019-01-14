@@ -309,7 +309,7 @@ ICANN- Internet Corporation for Assigned Names and Numbers
 
     defines policies for how the names and numbers of internet run
 
-    "bottom up, consensus-driven, multi-stakholder model"
+    "bottom up, consensus-driven, multi-stakeholder model"
 
 in 2015 ICANN transitioned from being under contract from US Department of Commerce to autonomous control of ICANN
     has board of directors 
@@ -338,7 +338,7 @@ ICANN treates public sector, private sector, and technical experts as peers
 
     registries have interest in designing policy favorable to these groups
 
-    Rregistrars will push back on ICANN sometimes
+    Registrars will push back on ICANN sometimes
 
 ## End Users
 
@@ -461,7 +461,7 @@ Data doesn't always get sent out immediately
 bigger overhead
     retransmission and package acknowledgement
 
-UDP is message orient4ed
+UDP is message oriented
     sends data in distinct chunks
 
 TCP stream oriented
@@ -818,7 +818,7 @@ all are subject to same origin rules
 Cross-site Scripting Attack
 
 client-side code injection
-    attacket can execute malicious scripts
+    attacker can execute malicious scripts
         malicious payload
     into legit website or web app
 
@@ -864,9 +864,9 @@ JS can read and make arbitrary mods to the browser's DOM
 can use XMLHttpRequest to send HTTP reqs with arbitrary content to arbitrary destinations
 
 JS in modern browsers can leverage HTML5 APIs
-    access geolocation, webcam, mic,specific fils from the user's file system
+    access geolocation, webcam, mic,specific files from the user's file system
 
-above with social engineering allow attaeckers to pull off advanced attacks
+above with social engineering allow attackers to pull off advanced attacks
     cookie theft
     keylogging
     phishing
@@ -2092,7 +2092,20 @@ Service Oriented Architecture (SOA)
 
         decoupled
 
+    provisioning
+        machines stared automatically
+
+        all software onto that machine
+
+        static code to running servers
+
+        terraform
+
+        docker for containers 
+
 Network Routing
+    customer reqs going to right place
+        efficiently as possible
 
 Resiliency Testing
     Hailstorm - shuts down services

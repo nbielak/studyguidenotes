@@ -930,6 +930,14 @@ else
 
 # Longest Increasing Subsequence
 
+length of longest subsequence of a given sequence
+    all els of subsequence are sorted in increasing order
+
+let arr[0..n-1] be input and L(i) be length of LIS ending at index i 
+
+L(i) written recursively
+
+
 
 
 

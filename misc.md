@@ -43,11 +43,11 @@ data persist after browser is closed
 ## Cross Browser Support
 
 ## Mobile
-    viewport allows you to define widths and zoom settings
+viewport allows you to define widths and zoom settings
 
-    full screen browsing
+full screen browsing
 
-    homescreen icons
+homescreen icons
 
 # Media Queries
 
