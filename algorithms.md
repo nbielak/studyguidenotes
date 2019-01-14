@@ -937,6 +937,29 @@ let arr[0..n-1] be input and L(i) be length of LIS ending at index i
 
 L(i) written recursively
 
+# Edit Distance
+
+given 2 strings and operations that can be performed on str1, find minimum number of edits required to convert str1 to str2
+    insert, remove, replace
+
+## Subproblems
+
+process all characters one by one starting from left or right side of both strs
+
+if last char of two strings are the same
+    ignore last chars and get count for remaining strs
+
+else
+    consider all operations on last char of first str
+
+    recursively compute min cost for all three operations
+
+    take minimum of three
+        insert: m and n-1
+        remove: m-1 and n
+        replace: m-1 and n-1
+
+can also use dynamic programming
 
 
 
