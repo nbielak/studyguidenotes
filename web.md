@@ -2130,6 +2130,41 @@ Mapping is a Graph Problem
             splitting graph alg
                 break up cities into graphs
 
+# Summarization Problem
+
+library that summarizes text articles
+    whole text and returns summary
+
+make it scalable
+    mobile and website
+
+0.1-5 secs to summarize
+    use existing library and allow users to submit text articles through mobile app and website
+
+1 mil users a month
+    no more than 10 secs
+
+## Clarifying Questions
+
+not feasible to have system which reqs pile up and processed later
+
+real time w/o slow down
+
+problematic if a lot of reqs come in at once
+    service overwhelmed to process all incoming reqs
+
+    what is the expected max # of simultaneous reqs?
+        50 per sec, but design should allow us to scale up to handle more traffic in the future
+
+Store the result for a longer period of time?
+    store incoming articles and summary to compute statistics and also to inspect the performance of algs
+
+Expected way of presenting the results within the website and the app?
+    redirect to a screen, indicating the summarization in progress
+
+    update when return results
+
+## High Level Design
 
     
 
