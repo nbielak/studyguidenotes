@@ -2166,6 +2166,35 @@ Expected way of presenting the results within the website and the app?
 
 ## High Level Design
 
+RESTful API exposed by the summarization service
+    all front end clients send HTTP reqs to
+
+Data Storage
+
+store data to analyze accuracy of the alg and statistical goals
+
+show customers a history of their reqs and summaries
+
+store and fetch by user
+
+## Low Level Issues
+
+could have too many HTTP reqs
+
+put load balancer in front of a number of instances of summarization service
+
+use message queue
+    enqueue all summarization reqs
+
+    workers pull jobs from queue, one at a time
+
+    needs to allow multiple consumers to pull messags from it to start a number of instances running the summarization service
+
+    easily scale up
+
+monitoring service to detect increased number of reqs
+    spin up additional workers
+
     
 
      

@@ -213,7 +213,7 @@ checks whether table is nil or not
 
 !nil, returns val of table[i]
 
-nil and i satisifies base condition, update the look up table with the basze value and return the same
+nil and i satisifies base condition, update the look up table with the base value and return the same
 
 nil and !i satisfies base case, i splits the problem i into subproblems and recursively calls itself to solve them
 
@@ -479,7 +479,7 @@ O(n) insertion
 
 # AVL Trees
 
-way to keep binary trees balanced
+way to keep binary search trees balanced
 
 height of node = level of node
     longest path of node to leaf
@@ -533,7 +533,7 @@ data should tell where it should go
 bad at ordering or sorting
 
 use only the data using hashed
-    and all the data being ha=shed
+    and all the data being hashed
 
 deterministic
     reliable
